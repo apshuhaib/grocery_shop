@@ -1,6 +1,8 @@
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/core/strings.dart';
+import 'package:e_commerce_test/presentation/cart/cart.dart';
+import 'package:e_commerce_test/presentation/cart/widgets/cart_icon_widget.dart';
 import 'package:e_commerce_test/presentation/home/static.dart';
 import 'package:e_commerce_test/presentation/product/static_data.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_items_card.dart';
@@ -35,35 +37,17 @@ class ProductsPage extends StatelessWidget {
           ),
         ),
         actions: [
-          Stack(
-            children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.transparent,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.shopping_cart,
-                    size: 35,
-                    color: Colors.green,
-                  ),
+          CartIconWidget(
+            onCartPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Cart();
+                  },
                 ),
-              ),
-              const Positioned(
-                right: 7,
-                child: CircleAvatar(
-                  backgroundColor: Colors.red,
-                  radius: 10,
-                  child: Center(
-                      child: Text(
-                    '5',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  )),
-                ),
-              )
-            ],
-          ),
+              );
+            },
+          )
         ],
       ),
       body: BlocBuilder<ProductBloc, ProductState>(

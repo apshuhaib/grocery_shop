@@ -84,13 +84,13 @@ class CustomerPage extends StatelessWidget {
           BlocBuilder<CustomerBloc, CustomerState>(
             builder: (context, state) {
               if (state.isLoading) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(
                     color: kgreen,
                   ),
                 );
               } else if (state.isError) {
-                return Center(
+                return const Center(
                   child: Text('Error'),
                 );
               } else {
