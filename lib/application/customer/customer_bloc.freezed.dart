@@ -19,32 +19,38 @@ mixin _$CustomerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function(String customerQuery) searchCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function(String customerQuery)? searchCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function(String customerQuery)? searchCustomer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchCustomer value) searchCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchCustomer value)? searchCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
+    TResult Function(SearchCustomer value)? searchCustomer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$InitializeImpl implements Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function(String customerQuery) searchCustomer,
   }) {
     return initialize();
   }
@@ -115,6 +122,7 @@ class _$InitializeImpl implements Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function(String customerQuery)? searchCustomer,
   }) {
     return initialize?.call();
   }
@@ -123,6 +131,7 @@ class _$InitializeImpl implements Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function(String customerQuery)? searchCustomer,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -135,6 +144,7 @@ class _$InitializeImpl implements Initialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchCustomer value) searchCustomer,
   }) {
     return initialize(this);
   }
@@ -143,6 +153,7 @@ class _$InitializeImpl implements Initialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchCustomer value)? searchCustomer,
   }) {
     return initialize?.call(this);
   }
@@ -151,6 +162,7 @@ class _$InitializeImpl implements Initialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
+    TResult Function(SearchCustomer value)? searchCustomer,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -165,8 +177,146 @@ abstract class Initialize implements CustomerEvent {
 }
 
 /// @nodoc
+abstract class _$$SearchCustomerImplCopyWith<$Res> {
+  factory _$$SearchCustomerImplCopyWith(_$SearchCustomerImpl value,
+          $Res Function(_$SearchCustomerImpl) then) =
+      __$$SearchCustomerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String customerQuery});
+}
+
+/// @nodoc
+class __$$SearchCustomerImplCopyWithImpl<$Res>
+    extends _$CustomerEventCopyWithImpl<$Res, _$SearchCustomerImpl>
+    implements _$$SearchCustomerImplCopyWith<$Res> {
+  __$$SearchCustomerImplCopyWithImpl(
+      _$SearchCustomerImpl _value, $Res Function(_$SearchCustomerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? customerQuery = null,
+  }) {
+    return _then(_$SearchCustomerImpl(
+      customerQuery: null == customerQuery
+          ? _value.customerQuery
+          : customerQuery // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchCustomerImpl implements SearchCustomer {
+  const _$SearchCustomerImpl({required this.customerQuery});
+
+  @override
+  final String customerQuery;
+
+  @override
+  String toString() {
+    return 'CustomerEvent.searchCustomer(customerQuery: $customerQuery)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchCustomerImpl &&
+            (identical(other.customerQuery, customerQuery) ||
+                other.customerQuery == customerQuery));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, customerQuery);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchCustomerImplCopyWith<_$SearchCustomerImpl> get copyWith =>
+      __$$SearchCustomerImplCopyWithImpl<_$SearchCustomerImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(String customerQuery) searchCustomer,
+  }) {
+    return searchCustomer(customerQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialize,
+    TResult? Function(String customerQuery)? searchCustomer,
+  }) {
+    return searchCustomer?.call(customerQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(String customerQuery)? searchCustomer,
+    required TResult orElse(),
+  }) {
+    if (searchCustomer != null) {
+      return searchCustomer(customerQuery);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchCustomer value) searchCustomer,
+  }) {
+    return searchCustomer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchCustomer value)? searchCustomer,
+  }) {
+    return searchCustomer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(SearchCustomer value)? searchCustomer,
+    required TResult orElse(),
+  }) {
+    if (searchCustomer != null) {
+      return searchCustomer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchCustomer implements CustomerEvent {
+  const factory SearchCustomer({required final String customerQuery}) =
+      _$SearchCustomerImpl;
+
+  String get customerQuery;
+  @JsonKey(ignore: true)
+  _$$SearchCustomerImplCopyWith<_$SearchCustomerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CustomerState {
   List<CustomerResultData> get customerResultData =>
+      throw _privateConstructorUsedError;
+  List<CustomerResultData> get customerSearchResultData =>
       throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
@@ -184,6 +334,7 @@ abstract class $CustomerStateCopyWith<$Res> {
   @useResult
   $Res call(
       {List<CustomerResultData> customerResultData,
+      List<CustomerResultData> customerSearchResultData,
       bool isLoading,
       bool isError});
 }
@@ -202,6 +353,7 @@ class _$CustomerStateCopyWithImpl<$Res, $Val extends CustomerState>
   @override
   $Res call({
     Object? customerResultData = null,
+    Object? customerSearchResultData = null,
     Object? isLoading = null,
     Object? isError = null,
   }) {
@@ -209,6 +361,10 @@ class _$CustomerStateCopyWithImpl<$Res, $Val extends CustomerState>
       customerResultData: null == customerResultData
           ? _value.customerResultData
           : customerResultData // ignore: cast_nullable_to_non_nullable
+              as List<CustomerResultData>,
+      customerSearchResultData: null == customerSearchResultData
+          ? _value.customerSearchResultData
+          : customerSearchResultData // ignore: cast_nullable_to_non_nullable
               as List<CustomerResultData>,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -232,6 +388,7 @@ abstract class _$$CustomerStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {List<CustomerResultData> customerResultData,
+      List<CustomerResultData> customerSearchResultData,
       bool isLoading,
       bool isError});
 }
@@ -248,6 +405,7 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? customerResultData = null,
+    Object? customerSearchResultData = null,
     Object? isLoading = null,
     Object? isError = null,
   }) {
@@ -255,6 +413,10 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
       customerResultData: null == customerResultData
           ? _value._customerResultData
           : customerResultData // ignore: cast_nullable_to_non_nullable
+              as List<CustomerResultData>,
+      customerSearchResultData: null == customerSearchResultData
+          ? _value._customerSearchResultData
+          : customerSearchResultData // ignore: cast_nullable_to_non_nullable
               as List<CustomerResultData>,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -273,9 +435,11 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
 class _$CustomerStateImpl implements _CustomerState {
   const _$CustomerStateImpl(
       {required final List<CustomerResultData> customerResultData,
+      required final List<CustomerResultData> customerSearchResultData,
       required this.isLoading,
       required this.isError})
-      : _customerResultData = customerResultData;
+      : _customerResultData = customerResultData,
+        _customerSearchResultData = customerSearchResultData;
 
   final List<CustomerResultData> _customerResultData;
   @override
@@ -286,6 +450,15 @@ class _$CustomerStateImpl implements _CustomerState {
     return EqualUnmodifiableListView(_customerResultData);
   }
 
+  final List<CustomerResultData> _customerSearchResultData;
+  @override
+  List<CustomerResultData> get customerSearchResultData {
+    if (_customerSearchResultData is EqualUnmodifiableListView)
+      return _customerSearchResultData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_customerSearchResultData);
+  }
+
   @override
   final bool isLoading;
   @override
@@ -293,7 +466,7 @@ class _$CustomerStateImpl implements _CustomerState {
 
   @override
   String toString() {
-    return 'CustomerState(customerResultData: $customerResultData, isLoading: $isLoading, isError: $isError)';
+    return 'CustomerState(customerResultData: $customerResultData, customerSearchResultData: $customerSearchResultData, isLoading: $isLoading, isError: $isError)';
   }
 
   @override
@@ -303,6 +476,8 @@ class _$CustomerStateImpl implements _CustomerState {
             other is _$CustomerStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._customerResultData, _customerResultData) &&
+            const DeepCollectionEquality().equals(
+                other._customerSearchResultData, _customerSearchResultData) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isError, isError) || other.isError == isError));
@@ -312,6 +487,7 @@ class _$CustomerStateImpl implements _CustomerState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_customerResultData),
+      const DeepCollectionEquality().hash(_customerSearchResultData),
       isLoading,
       isError);
 
@@ -325,11 +501,14 @@ class _$CustomerStateImpl implements _CustomerState {
 abstract class _CustomerState implements CustomerState {
   const factory _CustomerState(
       {required final List<CustomerResultData> customerResultData,
+      required final List<CustomerResultData> customerSearchResultData,
       required final bool isLoading,
       required final bool isError}) = _$CustomerStateImpl;
 
   @override
   List<CustomerResultData> get customerResultData;
+  @override
+  List<CustomerResultData> get customerSearchResultData;
   @override
   bool get isLoading;
   @override

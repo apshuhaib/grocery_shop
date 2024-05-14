@@ -19,61 +19,77 @@ class CustomerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
+        padding: EdgeInsets.symmetric(vertical: 15),
         width: double.infinity,
         height: 140,
         // color: Colors.blue,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 100,
-              width: 100,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              child: Image.network(
-                imgUrl,
-                fit: BoxFit.cover,
+              height: 110,
+              width: 110,
+              decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(20)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: Image.network(
+                  imgUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
+            const VerticalDivider(
+              color: Colors.grey, // Customize divider color as needed
+              thickness: 0.8, // Customize divider thickness as needed
+              width: 5, // Customize divider width as needed
+            ),
             kWidth,
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      customerName,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 25,
-                    ),
-                    Icon(
-                      Icons.call,
-                      color: Colors.blue,
-                    ),
-                    Icon(Icons.message)
-                  ],
-                ),
-                kHeight,
-                Text(
-                  customerId,
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[800]),
-                ),
-                kHeight,
-                Text(
-                  customerAddress,
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[800]),
-                )
-              ],
+            Container(
+              // color: Colors.blue,
+              width: 180,
+              height: 110,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    overflow: TextOverflow.ellipsis,
+                    customerName,
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "ID : $customerId",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[800]),
+                  ),
+                  Text(
+                    customerAddress,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[800]),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              // color: Colors.red,
+              width: 50,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.call,
+                    color: Colors.blue,
+                  ),
+                  Icon(Icons.message)
+                ],
+              ),
             )
           ],
         ),

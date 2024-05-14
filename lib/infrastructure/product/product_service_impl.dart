@@ -15,7 +15,7 @@ class ProductServiceimpl implements ProductService {
     try {
       final Response response =
           await Dio(BaseOptions()).get(ApiEndpoints.products);
-      log(response.data.toString());
+      // log(response.data.toString());
       if (response.statusCode == 200 || response.statusCode == 201) {
         final result = ProductResponse.fromJson(response.data);
         return Right(result);
