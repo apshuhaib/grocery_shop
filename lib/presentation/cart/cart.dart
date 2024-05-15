@@ -17,6 +17,7 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   List<CartModel> cartList = [];
+  double subtotal = 0;
 
   // Future<void> loadAllTodos() async {
   //   var _box = await Hive.openBox('cart');
@@ -107,6 +108,9 @@ class _CartState extends State<Cart> {
             },
             loaded: (cartItems) {
               cartItems = cartItems.reversed.toList();
+              for (final products in cartItems) {
+                subtotal += products.price.toDouble() * products.quantity;
+              }
               // Display the list of cart items when loaded
               return Column(
                 children: [
@@ -129,6 +133,7 @@ class _CartState extends State<Cart> {
                   ),
                   CheckoutCardWidget(
                     cartItems: cartItems,
+                    subtotal: subtotal,
                   ), // Assuming this widget is for checkout
                 ],
               );

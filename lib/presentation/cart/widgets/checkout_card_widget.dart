@@ -1,13 +1,15 @@
+import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
+import 'package:e_commerce_test/domain/orders/model/order_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CheckoutCardWidget extends StatelessWidget {
   final List<CartModel> cartItems;
-  const CheckoutCardWidget({
-    super.key,
-    required this.cartItems,
-  });
+  final double subtotal;
+  const CheckoutCardWidget(
+      {super.key, required this.cartItems, required this.subtotal});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,19 @@ class CheckoutCardWidget extends StatelessWidget {
             ),
             child: TextButton(
               onPressed: () {
-                print('checkou');
+                final request = OrderRequest(
+                  customerId: 2,
+                  totalPrice: subtotal,
+                  products: cartItems.map((item) {
+                    return OrderProduct(
+                      productId: int.parse(item.productId),
+                      quantity: item.quantity,
+                      price: item.price.toDouble(),
+                    );
+                  }).toList(),
+                );
+                BlocProvider.of<OrderBloc>(context)
+                    .add(OrderEvent.placeOrder(request));
               },
               child: const Text(
                 'CHECKOUT NOW',

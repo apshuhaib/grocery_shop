@@ -1,5 +1,6 @@
 import 'package:e_commerce_test/application/cart/cart_bloc.dart';
 import 'package:e_commerce_test/application/customer/customer_bloc.dart';
+import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
@@ -38,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<CartBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<OrderBloc>(),
         ),
       ],
       child: MaterialApp(
