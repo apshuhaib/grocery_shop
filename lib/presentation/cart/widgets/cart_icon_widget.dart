@@ -8,34 +8,47 @@ class CartIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: Colors.transparent,
-          child: IconButton(
-            onPressed: onCartPressed,
-            icon: const Icon(
-              Icons.shopping_cart,
-              size: 35,
-              color: Colors.green,
-            ),
+    return Center(
+      child: Badge(
+        label: Text('0'),
+        child: IconButton(
+          onPressed: onCartPressed,
+          icon: const Icon(
+            Icons.shopping_cart,
+            size: 35,
+            color: Colors.green,
           ),
         ),
-        Positioned(
-          right: 7,
-          child: CircleAvatar(
-            backgroundColor: Colors.red,
-            radius: 10,
-            child: Center(
-                child: Text(
-              cartCount,
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            )),
-          ),
-        )
-      ],
+      ),
     );
+    // return Stack(
+    //   children: [
+    //     CircleAvatar(
+    //       radius: 30,
+    //       backgroundColor: Colors.transparent,
+    //       child: IconButton(
+    //         onPressed: onCartPressed,
+    //         icon: const Icon(
+    //           Icons.shopping_cart,
+    //           size: 35,
+    //           color: Colors.green,
+    //         ),
+    //       ),
+    //     ),
+    //     Positioned(
+    //       right: 7,
+    //       child: CircleAvatar(
+    //         backgroundColor: Colors.red,
+    //         radius: 10,
+    //         child: Center(
+    //             child: Text(
+    //           cartCount,
+    //           style:
+    //               TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+    //         )),
+    //       ),
+    //     )
+    //   ],
+    // );
   }
 }

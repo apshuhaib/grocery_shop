@@ -2,9 +2,14 @@ import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class CartItemCard extends StatelessWidget {
-  const CartItemCard({
-    super.key,
-  });
+  final String itemName;
+  final double itemPrice;
+  final String imgurl;
+  const CartItemCard(
+      {super.key,
+      required this.itemName,
+      required this.itemPrice,
+      required this.imgurl});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +25,7 @@ class CartItemCard extends StatelessWidget {
               height: 90,
               width: 80,
               // color: Colors.red,
-              child: Image.network(
-                  'https://m.media-amazon.com/images/I/71GUFttn0jL._AC_UF1000,1000_QL80_.jpg'),
+              child: Image.network(imgurl),
             ),
             Container(
               height: 90,
@@ -31,7 +35,7 @@ class CartItemCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Onion',
+                    itemName,
                     style: TextStyle(
                         color: kgreen,
                         fontWeight: FontWeight.bold,
@@ -91,7 +95,7 @@ class CartItemCard extends StatelessWidget {
               // color: Colors.green,
               child: Center(
                   child: Text(
-                'Rs 100',
+                '\$ ${itemPrice}',
                 style: TextStyle(
                     fontSize: 18, fontWeight: FontWeight.bold, color: kgreen),
               )),

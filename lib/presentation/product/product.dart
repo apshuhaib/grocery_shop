@@ -1,6 +1,9 @@
+import 'package:e_commerce_test/application/cart/cart_bloc.dart';
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
+import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/core/strings.dart';
+import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/cart_icon_widget.dart';
 import 'package:e_commerce_test/presentation/home/static.dart';
@@ -8,6 +11,7 @@ import 'package:e_commerce_test/presentation/product/static_data.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_items_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
@@ -47,7 +51,8 @@ class ProductsPage extends StatelessWidget {
                 ),
               );
             },
-          )
+          ),
+          kWidth,
         ],
       ),
       body: BlocBuilder<ProductBloc, ProductState>(
@@ -84,7 +89,25 @@ class ProductsPage extends StatelessWidget {
                           imgUrl: '$imageAppendUrl${products.image}',
                           price: products.price.toString(),
                           onPressed: () {},
-                          onCartPressed: () {},
+                          onCartPressed: () async {
+                            final product = CartModel(
+                              productId: DateTime.now().toString(),
+                              productName: products.name!,
+                              quantity: 1,
+                              price: products.price!.toDouble(),
+                              imageUrl: products.image!,
+                            );
+                            BlocProvider.of<CartBloc>(context)
+                                .add(CartEvent.onAddToCart(product));
+                            print(product.price);
+                            // final _box = await Hive.openBox('cart');
+                            // _box.add(product);
+                            // print(product.productName);
+                            // print(products.price);
+                            // print(_box.length);
+                            // print(product.productId);
+                            // print(product.imageUrl);
+                          },
                         );
                       },
                       childCount: state.productResultData.length,
