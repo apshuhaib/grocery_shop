@@ -127,7 +127,9 @@ class _CartState extends State<Cart> {
                       },
                     ),
                   ),
-                  const CheckoutCardWidget(), // Assuming this widget is for checkout
+                  CheckoutCardWidget(
+                    cartItems: cartItems,
+                  ), // Assuming this widget is for checkout
                 ],
               );
             },

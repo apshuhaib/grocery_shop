@@ -1,13 +1,20 @@
 import 'package:e_commerce_test/core/colors/colors.dart';
+import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutCardWidget extends StatelessWidget {
+  final List<CartModel> cartItems;
   const CheckoutCardWidget({
     super.key,
+    required this.cartItems,
   });
 
   @override
   Widget build(BuildContext context) {
+    double subtotal = 0;
+    for (final item in cartItems) {
+      subtotal += item.price.toDouble() * item.quantity;
+    }
     return Container(
       color: Colors.green[100],
       padding: EdgeInsets.all(16.0),
@@ -24,7 +31,7 @@ class CheckoutCardWidget extends StatelessWidget {
                     fontSize: 16),
               ),
               Text(
-                '\$100', // Replace with actual total
+                '\$${subtotal.toStringAsFixed(2)}', // Replace with actual total
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: kgreen, fontSize: 25),
               ),

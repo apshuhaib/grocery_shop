@@ -36,6 +36,7 @@ class _CartItemCardState extends State<CartItemCard> {
 
   @override
   Widget build(BuildContext context) {
+    double totalPrice = widget.itemPrice * _quantity;
     return Card(
       child: Container(
         height: 100,
@@ -88,7 +89,9 @@ class _CartItemCardState extends State<CartItemCard> {
                         BlocProvider.of<CartBloc>(context)
                             .add(CartEvent.decrementCartItem(widget.cartItem));
                         setState(() {
-                          _quantity--; // Update the quantity locally
+                          _quantity--;
+                          totalPrice -=
+                              widget.itemPrice; // Update the quantity locally
                         });
                       }
                     },
@@ -115,8 +118,12 @@ class _CartItemCardState extends State<CartItemCard> {
                       BlocProvider.of<CartBloc>(context)
                           .add(CartEvent.incrementCartItem(widget.cartItem));
                       setState(() {
-                        _quantity++; // Increment the quantity locally
+                        _quantity++;
+                        totalPrice += widget.itemPrice;
+
+                        // Increment the quantity locally
                       });
+                      print(_quantity);
                     },
                     icon: const CircleAvatar(
                         radius: 16,
@@ -135,7 +142,7 @@ class _CartItemCardState extends State<CartItemCard> {
               // color: Colors.green,
               child: Center(
                   child: Text(
-                '\$ ${widget.totalPrice}',
+                '\$ $totalPrice',
                 style: TextStyle(
                     fontSize: 18, fontWeight: FontWeight.bold, color: kgreen),
               )),
