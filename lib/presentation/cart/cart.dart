@@ -86,6 +86,13 @@ class _CartState extends State<Cart> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          TextButton(
+              onPressed: () async {
+                clearCartData();
+              },
+              child: Text('clear'))
+        ],
       ),
       body: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
@@ -112,6 +119,10 @@ class _CartState extends State<Cart> {
                           itemName: products.productName,
                           itemPrice: products.price.toDouble(),
                           imgurl: '$imageAppendUrl${products.imageUrl}',
+                          quantity: products.quantity,
+                          totalPrice:
+                              (products.price.toDouble()) * products.quantity,
+                          cartItem: products,
                         );
                       },
                     ),
@@ -122,11 +133,25 @@ class _CartState extends State<Cart> {
             },
             error: () {
               // Return an error message if loading fails
+
               return const Center(child: Text('Error loading cart items'));
             },
           );
         },
       ),
     );
+  }
+
+  Future<void> clearCartData() async {
+    try {
+      // Open the Hive box
+      final _box = await Hive.openBox<CartModel>('cart');
+
+      // Clear the box to remove all items
+      await _box.clear();
+    } catch (e) {
+      // Handle any errors
+      print('Error clearing cart data: $e');
+    }
   }
 }
