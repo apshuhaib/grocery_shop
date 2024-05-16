@@ -14,6 +14,7 @@ part 'cart_bloc.freezed.dart';
 @injectable
 class CartBloc extends Bloc<CartEvent, CartState> {
   final CartService _cartService;
+  // int cartCount = 0;
   CartBloc(this._cartService) : super(const _Initial()) {
     //add to cart
     on<OnAddToCart>((event, emit) async {
@@ -21,6 +22,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         final _box = await Hive.openBox<CartModel>('cart');
         await _box.add(event.cartItem);
         final cartItems = _cartService.getCartItems();
+        // cartCount++;
         emit(CartState.loaded(cartItems));
       } catch (_) {
         emit(const CartState.error());

@@ -2,6 +2,7 @@ import 'package:e_commerce_test/application/customer/customer_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/core/strings.dart';
+import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/customer/widgets/customer_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -105,6 +106,12 @@ class CustomerPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final customer = displayList[index];
                       return CustomerCard(
+                        onTap: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return Cart();
+                          }));
+                        },
                         customerName: customer.name ?? 'NA',
                         customerId: customer.id.toString(),
                         customerAddress:
