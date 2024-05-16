@@ -52,7 +52,7 @@ class CategoriesCard extends StatelessWidget {
               final product = categoriesProducts[index];
               return Container(
                 width: 70,
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                margin: const EdgeInsets.symmetric(horizontal: 10.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -71,8 +71,8 @@ class CategoriesCard extends StatelessWidget {
                     kHeight5,
                     Text(
                       product["name"],
-                      style:
-                          TextStyle(color: kgreen, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          color: kgreen, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),

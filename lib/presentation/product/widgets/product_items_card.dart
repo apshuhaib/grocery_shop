@@ -6,8 +6,6 @@ class ProductsItemCard extends StatelessWidget {
   final String productName;
   final String imgUrl;
   final String price;
-
-  // final Map productItems;
   final VoidCallback onPressed;
   final VoidCallback onCartPressed;
   const ProductsItemCard(
@@ -15,7 +13,6 @@ class ProductsItemCard extends StatelessWidget {
       required this.productName,
       required this.imgUrl,
       required this.price,
-      // required this.productItems,
       required this.onPressed,
       required this.onCartPressed});
 
@@ -46,13 +43,13 @@ class ProductsItemCard extends StatelessWidget {
                 ),
                 IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.favorite_outline_rounded))
+                    icon: const Icon(Icons.favorite_outline_rounded))
               ],
             ),
             kHeight20,
             Text(
               productName,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.green,
                   fontWeight: FontWeight.w600,
                   fontSize: 16),
@@ -62,7 +59,7 @@ class ProductsItemCard extends StatelessWidget {
               children: [
                 Text(
                   'Rs ${price}',
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: kgreen, fontWeight: FontWeight.w600, fontSize: 18),
                 ),
                 InkWell(
@@ -72,7 +69,7 @@ class ProductsItemCard extends StatelessWidget {
                     height: 40,
                     decoration: BoxDecoration(
                         color: kgreen, borderRadius: BorderRadius.circular(15)),
-                    child: Icon(
+                    child: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),

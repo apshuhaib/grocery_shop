@@ -2,9 +2,7 @@ import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/presentation/home/static.dart';
 import 'package:e_commerce_test/presentation/home/widgets/products_card.dart';
 import 'package:e_commerce_test/presentation/widgets/main_title.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DiscoverCard extends StatelessWidget {
   DiscoverCard({super.key});

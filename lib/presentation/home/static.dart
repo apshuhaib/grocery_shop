@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List discoveryProducts = [
   {
     "name": "Chicken Brolier",
@@ -35,3 +37,46 @@ List categoriesProducts = [
     "icon": "assets/images/cateogries_5.jpg",
   },
 ];
+
+class CategoriesList extends StatelessWidget {
+  final List<String> categories;
+
+  const CategoriesList({
+    Key? key,
+    required this.categories,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Categories:',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 10),
+        ListView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: categories.length,
+          itemBuilder: (context, index) {
+            final category = categories[index];
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: Text(
+                category,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            );
+          },
+        ),
+      ],
+    );
+  }
+}

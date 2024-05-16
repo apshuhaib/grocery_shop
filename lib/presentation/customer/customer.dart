@@ -2,7 +2,10 @@ import 'package:e_commerce_test/application/customer/customer_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/core/strings.dart';
+import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/customer/widgets/customer_card.dart';
+import 'package:e_commerce_test/presentation/main_page/main_page.dart';
+import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -28,7 +31,12 @@ class CustomerPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              changeIndexNotifier.value = 1;
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return MainPage();
+              }));
+            },
             icon: const Icon(
               Icons.arrow_back,
               size: 32,
@@ -45,7 +53,9 @@ class CustomerPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.align_horizontal_right),
           ),
         ],
@@ -105,6 +115,12 @@ class CustomerPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final customer = displayList[index];
                       return CustomerCard(
+                        onTap: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return Cart();
+                          }));
+                        },
                         customerName: customer.name ?? 'NA',
                         customerId: customer.id.toString(),
                         customerAddress:

@@ -1,4 +1,6 @@
+import 'package:e_commerce_test/application/cart/cart_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartIconWidget extends StatelessWidget {
   final VoidCallback onCartPressed;
@@ -8,17 +10,21 @@ class CartIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<CartBloc>(context).add(CartEvent.loadCart());
+    });
     return Center(
-      child: Badge(
-        label: Text('0'),
-        child: IconButton(
-          onPressed: onCartPressed,
-          icon: const Icon(
-            Icons.shopping_cart,
-            size: 35,
-            color: Colors.green,
-          ),
-        ),
+      child: BlocBuilder<CartBloc, CartState>(
+        builder: (context, state) {
+          return Badge(
+            label: Text('0'),
+            child: const Icon(
+              Icons.shopping_cart,
+              size: 35,
+              color: Colors.green,
+            ),
+          );
+        },
       ),
     );
     // return Stack(
