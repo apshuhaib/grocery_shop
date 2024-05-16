@@ -12,14 +12,17 @@ class CartItemCard extends StatefulWidget {
   final double totalPrice;
   final int quantity;
   final CartModel cartItem;
-  const CartItemCard(
-      {super.key,
-      required this.itemName,
-      required this.itemPrice,
-      required this.imgurl,
-      required this.totalPrice,
-      required this.quantity,
-      required this.cartItem});
+  final Function(int) onQuantityChanged;
+  const CartItemCard({
+    super.key,
+    required this.itemName,
+    required this.itemPrice,
+    required this.imgurl,
+    required this.totalPrice,
+    required this.quantity,
+    required this.cartItem,
+    required this.onQuantityChanged,
+  });
 
   @override
   State<CartItemCard> createState() => _CartItemCardState();
@@ -90,8 +93,9 @@ class _CartItemCardState extends State<CartItemCard> {
                             .add(CartEvent.decrementCartItem(widget.cartItem));
                         setState(() {
                           _quantity--;
-                          totalPrice -=
-                              widget.itemPrice; // Update the quantity locally
+                          totalPrice -= widget.itemPrice;
+                          widget.onQuantityChanged(
+                              _quantity); // Update the quantity locally
                         });
                       }
                     },
@@ -120,6 +124,7 @@ class _CartItemCardState extends State<CartItemCard> {
                       setState(() {
                         _quantity++;
                         totalPrice += widget.itemPrice;
+                        widget.onQuantityChanged(_quantity);
 
                         // Increment the quantity locally
                       });

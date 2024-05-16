@@ -108,9 +108,7 @@ class _CartState extends State<Cart> {
             },
             loaded: (cartItems) {
               cartItems = cartItems.reversed.toList();
-              for (final products in cartItems) {
-                subtotal += products.price.toDouble() * products.quantity;
-              }
+              subtotal = calculateSubtotal(cartList);
               // Display the list of cart items when loaded
               return Column(
                 children: [
@@ -127,6 +125,12 @@ class _CartState extends State<Cart> {
                           totalPrice:
                               (products.price.toDouble()) * products.quantity,
                           cartItem: products,
+                          onQuantityChanged: (newQuantity) {
+                            // Update subtotal when quantity changes
+                            setState(() {
+                              subtotal = calculateSubtotal(cartList);
+                            });
+                          },
                         );
                       },
                     ),
@@ -160,5 +164,13 @@ class _CartState extends State<Cart> {
       // Handle any errors
       print('Error clearing cart data: $e');
     }
+  }
+
+  double calculateSubtotal(List<CartModel> cartList) {
+    double total = 0;
+    for (final item in cartList) {
+      total += item.price.toDouble() * item.quantity;
+    }
+    return total;
   }
 }
