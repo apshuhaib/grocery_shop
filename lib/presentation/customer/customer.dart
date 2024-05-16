@@ -4,6 +4,8 @@ import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/core/strings.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/customer/widgets/customer_card.dart';
+import 'package:e_commerce_test/presentation/main_page/main_page.dart';
+import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -29,7 +31,12 @@ class CustomerPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              changeIndexNotifier.value = 1;
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return MainPage();
+              }));
+            },
             icon: const Icon(
               Icons.arrow_back,
               size: 32,

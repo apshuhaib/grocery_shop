@@ -71,8 +71,8 @@ class CategoriesCard extends StatelessWidget {
                     kHeight5,
                     Text(
                       product["name"],
-                      style:
-                          TextStyle(color: kgreen, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          color: kgreen, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),

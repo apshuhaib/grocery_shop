@@ -29,14 +29,14 @@ class CheckoutCardWidget extends StatelessWidget {
           Column(
             children: [
               Text(
-                'Subtotal', // Replace with actual total
+                'Subtotal',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.green[400],
                     fontSize: 16),
               ),
               Text(
-                '\$${subtotal.toStringAsFixed(2)}', // Replace with actual total
+                '\$${subtotal.toStringAsFixed(2)}',
                 style: const TextStyle(
                     fontWeight: FontWeight.bold, color: kgreen, fontSize: 25),
               ),
@@ -76,7 +76,7 @@ class CheckoutCardWidget extends StatelessWidget {
 
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return OrderAcceptedWidget();
+                    return const OrderAcceptedWidget();
                   }));
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -104,13 +104,10 @@ class CheckoutCardWidget extends StatelessWidget {
 
   Future<void> clearCartData() async {
     try {
-      // Open the Hive box
       final _box = await Hive.openBox<CartModel>('cart');
 
-      // Clear the box to remove all items
       await _box.clear();
     } catch (e) {
-      // Handle any errors
       print('Error clearing cart data: $e');
     }
   }

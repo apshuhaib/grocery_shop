@@ -23,7 +23,7 @@ class CustomerCard extends StatelessWidget {
       onTap: onTap,
       child: Card(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 15),
+          padding: const EdgeInsets.symmetric(vertical: 15),
           width: double.infinity,
           height: 140,
           // color: Colors.blue,
@@ -35,7 +35,7 @@ class CustomerCard extends StatelessWidget {
                 height: 110,
                 width: 110,
                 decoration: BoxDecoration(
-                    color: Colors.yellow,
+                    // color: Colors.yellow,
                     borderRadius: BorderRadius.circular(20)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(18),
@@ -46,9 +46,9 @@ class CustomerCard extends StatelessWidget {
                 ),
               ),
               const VerticalDivider(
-                color: Colors.grey, // Customize divider color as needed
-                thickness: 0.8, // Customize divider thickness as needed
-                width: 5, // Customize divider width as needed
+                color: Colors.grey,
+                thickness: 0.8,
+                width: 5,
               ),
               kWidth,
               Container(

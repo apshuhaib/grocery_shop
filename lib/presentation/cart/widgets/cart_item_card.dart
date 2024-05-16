@@ -4,6 +4,7 @@ import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class CartItemCard extends StatefulWidget {
   final String itemName;
@@ -86,32 +87,45 @@ class _CartItemCardState extends State<CartItemCard> {
               // color: Colors.yellow,
               child: Row(
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      if (_quantity > 0) {
-                        BlocProvider.of<CartBloc>(context)
-                            .add(CartEvent.decrementCartItem(widget.cartItem));
-                        setState(() {
-                          _quantity--;
-                          totalPrice -= widget.itemPrice;
-                          widget.onQuantityChanged(
-                              _quantity); // Update the quantity locally
-                        });
-                      }
-                    },
-                    icon: const CircleAvatar(
-                      radius: 16,
-                      backgroundColor: kgreen,
-                      child: CircleAvatar(
-                        radius: 14,
-                        backgroundColor: kwhiteColor,
-                        child: Icon(
-                          Icons.remove,
-                          color: kgreen,
+                  _quantity > 1
+                      ? IconButton(
+                          onPressed: () {
+                            if (_quantity > 0) {
+                              BlocProvider.of<CartBloc>(context).add(
+                                  CartEvent.decrementCartItem(widget.cartItem));
+                              setState(() {
+                                _quantity--;
+                                totalPrice -= widget.itemPrice;
+                                widget.onQuantityChanged(
+                                    _quantity); // Update the quantity locally
+                              });
+                            }
+                          },
+                          icon: const CircleAvatar(
+                            radius: 16,
+                            backgroundColor: kgreen,
+                            child: CircleAvatar(
+                              radius: 14,
+                              backgroundColor: kwhiteColor,
+                              child: Icon(
+                                Icons.remove,
+                                color: kgreen,
+                              ),
+                            ),
+                          ),
+                        )
+                      : IconButton(
+                          onPressed: () {
+                            // Perform deletion
+                            BlocProvider.of<CartBloc>(context).add(
+                                CartEvent.onRemovefromCart(
+                                    widget.cartItem.productId));
+                          },
+                          icon: const Icon(
+                            Icons.delete,
+                            color: Colors.red,
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
                   Text(
                     '$_quantity',
                     style: const TextStyle(
@@ -146,11 +160,12 @@ class _CartItemCardState extends State<CartItemCard> {
               width: 60,
               // color: Colors.green,
               child: Center(
-                  child: Text(
-                '\$ $totalPrice',
-                style: TextStyle(
-                    fontSize: 18, fontWeight: FontWeight.bold, color: kgreen),
-              )),
+                child: Text(
+                  '\$ $totalPrice',
+                  style: TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold, color: kgreen),
+                ),
+              ),
             ),
           ],
         ),

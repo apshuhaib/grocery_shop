@@ -21,7 +21,7 @@ class CarouselCard extends StatelessWidget {
           builder: (BuildContext context) {
             return Container(
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              margin: const EdgeInsets.symmetric(horizontal: 10.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20), color: Colors.amber),
               child: ClipRRect(

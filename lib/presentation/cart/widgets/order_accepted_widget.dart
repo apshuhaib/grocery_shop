@@ -2,7 +2,6 @@ import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/presentation/main_page/main_page.dart';
 import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class OrderAcceptedWidget extends StatelessWidget {
   const OrderAcceptedWidget({super.key});
@@ -21,14 +20,14 @@ class OrderAcceptedWidget extends StatelessWidget {
             ),
             Column(
               children: [
-                Spacer(),
+                const Spacer(),
                 Center(
                   child: Image.asset(
                     'assets/images/order-accepted.png',
                     width: media.width * 0.8,
                   ),
                 ),
-                Text(
+                const Text(
                   'Order Accepted',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -36,7 +35,7 @@ class OrderAcceptedWidget extends StatelessWidget {
                       fontSize: 28,
                       fontWeight: FontWeight.w600),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   width: media.width * 0.6,
                   height: 60,
@@ -44,7 +43,7 @@ class OrderAcceptedWidget extends StatelessWidget {
                       color: kgreen, borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Track Order',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -61,7 +60,7 @@ class OrderAcceptedWidget extends StatelessWidget {
                         return MainPage();
                       }), (route) => false);
                     },
-                    child: Text(
+                    child: const Text(
                       'Back to home',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,

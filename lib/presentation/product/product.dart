@@ -102,14 +102,6 @@ class ProductsPage extends StatelessWidget {
                                   BlocProvider.of<CartBloc>(context).add(
                                       CartEvent.onAddToCart(product, context));
                                   print(product.productId);
-
-                                  // final _box = await Hive.openBox('cart');
-                                  // _box.add(product);
-                                  // print(product.productName);
-                                  // print(products.price);
-                                  // print(_box.length);
-                                  // print(product.productId);
-                                  // print(product.imageUrl);
                                 },
                               );
                             },

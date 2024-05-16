@@ -19,58 +19,6 @@ class _CartState extends State<Cart> {
   List<CartModel> cartList = [];
   double subtotal = 0;
 
-  // Future<void> loadAllTodos() async {
-  //   var _box = await Hive.openBox('cart');
-  //   _box.values.toList();
-  //   print(_box.values.toList());
-  //   setState(() {});
-  // }
-
-  // @override
-  // void initState() {
-  //   loadAllTodos();
-  //   super.initState();
-  // }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   WidgetsBinding.instance.addPostFrameCallback(
-  //     (_) {
-  //       BlocProvider.of<CartBloc>(context).add(const CartEvent.loadCart());
-  //     },
-  //   );
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       centerTitle: true,
-  //       title: const Text(
-  //         'My Cart',
-  //         style: TextStyle(
-  //           color: kgreen,
-  //           fontSize: 30,
-  //           fontWeight: FontWeight.bold,
-  //         ),
-  //       ),
-  //     ),
-  //     body: Column(
-  //       children: [
-  //         BlocBuilder<CartBloc, CartState>(
-  //           builder: (context, state) {
-
-  //             return Expanded(
-  //               child: ListView.builder(
-  //                 itemCount: 10,
-  //                 itemBuilder: (context, index) {
-  //                   return CartItemCard();
-  //                 },
-  //               ),
-  //             );
-  //           },
-  //         ),
-  //         CheckoutCardWidget(),
-  //       ],
-  //     ),
-  //   );
-  // }
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -99,17 +47,15 @@ class _CartState extends State<Cart> {
         builder: (context, state) {
           return state.when(
             initial: () {
-              // Return your initial UI state here if needed
               return const Center(child: Text('Initial state'));
             },
             loading: () {
-              // Return a loading indicator while waiting for cart items
               return const Center(child: CircularProgressIndicator());
             },
             loaded: (cartItems) {
               cartItems = cartItems.reversed.toList();
               subtotal = calculateSubtotal(cartList);
-              // Display the list of cart items when loaded
+
               return Column(
                 children: [
                   Expanded(
@@ -138,13 +84,11 @@ class _CartState extends State<Cart> {
                   CheckoutCardWidget(
                     cartItems: cartItems,
                     subtotal: subtotal,
-                  ), // Assuming this widget is for checkout
+                  ),
                 ],
               );
             },
             error: () {
-              // Return an error message if loading fails
-
               return const Center(child: Text('Error loading cart items'));
             },
           );
@@ -155,13 +99,10 @@ class _CartState extends State<Cart> {
 
   Future<void> clearCartData() async {
     try {
-      // Open the Hive box
       final _box = await Hive.openBox<CartModel>('cart');
 
-      // Clear the box to remove all items
       await _box.clear();
     } catch (e) {
-      // Handle any errors
       print('Error clearing cart data: $e');
     }
   }

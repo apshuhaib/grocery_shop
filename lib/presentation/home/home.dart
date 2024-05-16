@@ -57,12 +57,9 @@ class _HomePageState extends State<HomePage> {
                 CategoriesCard(),
                 DiscoverCard(),
               ] else ...[
-                // Search UI when user is searching
-                // Replace this with your search UI implementation
                 const SizedBox(height: 20),
                 Text('Search Results:'),
                 const SizedBox(height: 20),
-                // Example of displaying static categories with images and names
                 const CategoryCard(
                   name: 'fruits',
                   image: 'assets/images/categories_1.jpg',
