@@ -18,13 +18,10 @@ class CartIconWidget extends StatelessWidget {
         builder: (context, state) {
           return Badge(
             label: Text('0'),
-            child: IconButton(
-              onPressed: onCartPressed,
-              icon: const Icon(
-                Icons.shopping_cart,
-                size: 35,
-                color: Colors.green,
-              ),
+            child: const Icon(
+              Icons.shopping_cart,
+              size: 35,
+              color: Colors.green,
             ),
           );
         },

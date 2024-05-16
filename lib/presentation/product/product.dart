@@ -6,7 +6,6 @@ import 'package:e_commerce_test/core/strings.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/cart_icon_widget.dart';
-import 'package:e_commerce_test/presentation/cart/widgets/checkout_card_widget.dart';
 import 'package:e_commerce_test/presentation/customer/customer.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_items_card.dart';
 import 'package:flutter/material.dart';
@@ -94,17 +93,15 @@ class ProductsPage extends StatelessWidget {
                                 onPressed: () {},
                                 onCartPressed: () async {
                                   final product = CartModel(
-                                    productId: DateTime.now()
-                                        .millisecondsSinceEpoch
-                                        .toString(),
+                                    productId: products.id.toString(),
                                     productName: products.name!,
                                     quantity: 1,
                                     price: products.price!.toDouble(),
                                     imageUrl: products.image!,
                                   );
-                                  BlocProvider.of<CartBloc>(context)
-                                      .add(CartEvent.onAddToCart(product));
-                                  print(product.price);
+                                  BlocProvider.of<CartBloc>(context).add(
+                                      CartEvent.onAddToCart(product, context));
+                                  print(product.productId);
 
                                   // final _box = await Hive.openBox('cart');
                                   // _box.add(product);

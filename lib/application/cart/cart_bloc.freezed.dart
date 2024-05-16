@@ -18,7 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CartEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -34,7 +35,7 @@ mixin _$CartEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -50,7 +51,7 @@ mixin _$CartEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -139,7 +140,7 @@ abstract class _$$OnAddToCartImplCopyWith<$Res> {
           _$OnAddToCartImpl value, $Res Function(_$OnAddToCartImpl) then) =
       __$$OnAddToCartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CartModel cartItem});
+  $Res call({CartModel cartItem, BuildContext context});
 }
 
 /// @nodoc
@@ -154,12 +155,17 @@ class __$$OnAddToCartImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cartItem = null,
+    Object? context = null,
   }) {
     return _then(_$OnAddToCartImpl(
       null == cartItem
           ? _value.cartItem
           : cartItem // ignore: cast_nullable_to_non_nullable
               as CartModel,
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
     ));
   }
 }
@@ -167,14 +173,16 @@ class __$$OnAddToCartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnAddToCartImpl implements OnAddToCart {
-  const _$OnAddToCartImpl(this.cartItem);
+  const _$OnAddToCartImpl(this.cartItem, this.context);
 
   @override
   final CartModel cartItem;
+  @override
+  final BuildContext context;
 
   @override
   String toString() {
-    return 'CartEvent.onAddToCart(cartItem: $cartItem)';
+    return 'CartEvent.onAddToCart(cartItem: $cartItem, context: $context)';
   }
 
   @override
@@ -183,11 +191,12 @@ class _$OnAddToCartImpl implements OnAddToCart {
         (other.runtimeType == runtimeType &&
             other is _$OnAddToCartImpl &&
             (identical(other.cartItem, cartItem) ||
-                other.cartItem == cartItem));
+                other.cartItem == cartItem) &&
+            (identical(other.context, context) || other.context == context));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, cartItem);
+  int get hashCode => Object.hash(runtimeType, cartItem, context);
 
   @JsonKey(ignore: true)
   @override
@@ -198,7 +207,8 @@ class _$OnAddToCartImpl implements OnAddToCart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -211,13 +221,13 @@ class _$OnAddToCartImpl implements OnAddToCart {
     required TResult Function(CartModel cartItem) moveToWishlist,
     required TResult Function() syncCart,
   }) {
-    return onAddToCart(cartItem);
+    return onAddToCart(cartItem, context);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -230,13 +240,13 @@ class _$OnAddToCartImpl implements OnAddToCart {
     TResult? Function(CartModel cartItem)? moveToWishlist,
     TResult? Function()? syncCart,
   }) {
-    return onAddToCart?.call(cartItem);
+    return onAddToCart?.call(cartItem, context);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -251,7 +261,7 @@ class _$OnAddToCartImpl implements OnAddToCart {
     required TResult orElse(),
   }) {
     if (onAddToCart != null) {
-      return onAddToCart(cartItem);
+      return onAddToCart(cartItem, context);
     }
     return orElse();
   }
@@ -319,9 +329,11 @@ class _$OnAddToCartImpl implements OnAddToCart {
 }
 
 abstract class OnAddToCart implements CartEvent {
-  const factory OnAddToCart(final CartModel cartItem) = _$OnAddToCartImpl;
+  const factory OnAddToCart(
+      final CartModel cartItem, final BuildContext context) = _$OnAddToCartImpl;
 
   CartModel get cartItem;
+  BuildContext get context;
   @JsonKey(ignore: true)
   _$$OnAddToCartImplCopyWith<_$OnAddToCartImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -393,7 +405,8 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -412,7 +425,7 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -431,7 +444,7 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -561,7 +574,8 @@ class _$LoadCartImpl implements LoadCart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -580,7 +594,7 @@ class _$LoadCartImpl implements LoadCart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -599,7 +613,7 @@ class _$LoadCartImpl implements LoadCart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -723,7 +737,8 @@ class _$ClearCartImpl implements ClearCart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -742,7 +757,7 @@ class _$ClearCartImpl implements ClearCart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -761,7 +776,7 @@ class _$ClearCartImpl implements ClearCart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -913,7 +928,8 @@ class _$UpdateCartItemImpl implements UpdateCartItem {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -932,7 +948,7 @@ class _$UpdateCartItemImpl implements UpdateCartItem {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -951,7 +967,7 @@ class _$UpdateCartItemImpl implements UpdateCartItem {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -1081,7 +1097,8 @@ class _$CheckoutImpl implements Checkout {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -1100,7 +1117,7 @@ class _$CheckoutImpl implements Checkout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -1119,7 +1136,7 @@ class _$CheckoutImpl implements Checkout {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -1270,7 +1287,8 @@ class _$ApplyCouponImpl implements ApplyCoupon {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -1289,7 +1307,7 @@ class _$ApplyCouponImpl implements ApplyCoupon {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -1308,7 +1326,7 @@ class _$ApplyCouponImpl implements ApplyCoupon {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -1437,7 +1455,8 @@ class _$RemoveAllCouponsImpl implements RemoveAllCoupons {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -1456,7 +1475,7 @@ class _$RemoveAllCouponsImpl implements RemoveAllCoupons {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -1475,7 +1494,7 @@ class _$RemoveAllCouponsImpl implements RemoveAllCoupons {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -1627,7 +1646,8 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -1646,7 +1666,7 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -1665,7 +1685,7 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -1823,7 +1843,8 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -1842,7 +1863,7 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -1861,7 +1882,7 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -2019,7 +2040,8 @@ class _$MoveToWishlistImpl implements MoveToWishlist {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -2038,7 +2060,7 @@ class _$MoveToWishlistImpl implements MoveToWishlist {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -2057,7 +2079,7 @@ class _$MoveToWishlistImpl implements MoveToWishlist {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
@@ -2186,7 +2208,8 @@ class _$SyncCartImpl implements SyncCart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem) onAddToCart,
+    required TResult Function(CartModel cartItem, BuildContext context)
+        onAddToCart,
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
@@ -2205,7 +2228,7 @@ class _$SyncCartImpl implements SyncCart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem)? onAddToCart,
+    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
@@ -2224,7 +2247,7 @@ class _$SyncCartImpl implements SyncCart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem)? onAddToCart,
+    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,

@@ -3,11 +3,20 @@ import 'package:e_commerce_test/presentation/home/widgets/app_bar.dart';
 import 'package:e_commerce_test/presentation/home/widgets/carousel_card.dart';
 import 'package:e_commerce_test/presentation/home/widgets/category_card.dart';
 import 'package:e_commerce_test/presentation/home/widgets/discovery_card.dart';
+import 'package:e_commerce_test/presentation/home/widgets/search_categories_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+  HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  TextEditingController _searchController = TextEditingController();
+  bool _isSearching = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,24 +31,63 @@ class HomePage extends StatelessWidget {
                 title: 'Good Day!👋',
               ),
               kHeight20,
-              const CupertinoSearchTextField(
-                padding: EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
-                placeholder: 'Serach grocery',
-                placeholderStyle: TextStyle(
+              CupertinoSearchTextField(
+                controller: _searchController,
+                onChanged: (value) {
+                  setState(() {
+                    _isSearching = value.isNotEmpty;
+                  });
+                },
+                padding: const EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
+                placeholder: 'Search grocery',
+                placeholderStyle: const TextStyle(
                   color: Colors.green,
                 ),
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   size: 30,
                   Icons.search,
                   color: Colors.green,
                 ),
-                decoration: BoxDecoration(color: Colors.white),
+                decoration: const BoxDecoration(color: Colors.white),
               ),
               kHeight20,
-              CarouselCard(),
-              kHeight20,
-              CategoriesCard(),
-              DiscoverCard(),
+              if (!_isSearching) ...[
+                CarouselCard(),
+                kHeight20,
+                CategoriesCard(),
+                DiscoverCard(),
+              ] else ...[
+                // Search UI when user is searching
+                // Replace this with your search UI implementation
+                const SizedBox(height: 20),
+                Text('Search Results:'),
+                const SizedBox(height: 20),
+                // Example of displaying static categories with images and names
+                const CategoryCard(
+                  name: 'fruits',
+                  image: 'assets/images/categories_1.jpg',
+                ),
+                const CategoryCard(
+                  name: 'veggies',
+                  image: 'assets/images/categories_2.jpg',
+                ),
+                const CategoryCard(
+                  name: 'spices',
+                  image: 'assets/images/categories_3.jpg',
+                ),
+                const CategoryCard(
+                  name: 'Bread',
+                  image: 'assets/images/categories_4.jpg',
+                ),
+                const CategoryCard(
+                  name: 'Dairy',
+                  image: 'assets/images/cateogries_5.jpg',
+                ),
+              ],
+              // CarouselCard(),
+              // kHeight20,
+              // CategoriesCard(),
+              // DiscoverCard(),
             ],
           ),
         ),

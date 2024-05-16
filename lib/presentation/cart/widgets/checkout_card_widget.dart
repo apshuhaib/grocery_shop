@@ -2,8 +2,7 @@ import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/domain/orders/model/order_model.dart';
-import 'package:e_commerce_test/presentation/home/home.dart';
-import 'package:e_commerce_test/presentation/main_page/main_page.dart';
+import 'package:e_commerce_test/presentation/cart/widgets/order_accepted_widget.dart';
 import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +22,7 @@ class CheckoutCardWidget extends StatelessWidget {
     }
     return Container(
       color: Colors.green[100],
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -38,7 +37,7 @@ class CheckoutCardWidget extends StatelessWidget {
               ),
               Text(
                 '\$${subtotal.toStringAsFixed(2)}', // Replace with actual total
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.bold, color: kgreen, fontSize: 25),
               ),
             ],
@@ -52,32 +51,41 @@ class CheckoutCardWidget extends StatelessWidget {
             ),
             child: TextButton(
               onPressed: () {
-                final request = OrderRequest(
-                  customerId: 2,
-                  totalPrice: subtotal,
-                  products: cartItems.map((item) {
-                    return OrderProduct(
-                      productId: int.parse(item.productId),
-                      quantity: item.quantity,
-                      price: item.price.toDouble(),
-                    );
-                  }).toList(),
-                );
-                BlocProvider.of<OrderBloc>(context)
-                    .add(OrderEvent.placeOrder(request));
-                clearCartData();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Order Placed Successfully'),
-                    duration:
-                        Duration(seconds: 2), // Adjust the duration as needed
-                  ),
-                );
-                changeIndexNotifier.value = 0;
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) {
-                  return MainPage();
-                }), (route) => false);
+                if (cartItems.isNotEmpty) {
+                  final request = OrderRequest(
+                    customerId: 2,
+                    totalPrice: subtotal,
+                    products: cartItems.map((item) {
+                      return OrderProduct(
+                        productId: int.parse(item.productId),
+                        quantity: item.quantity,
+                        price: item.price.toDouble(),
+                      );
+                    }).toList(),
+                  );
+                  BlocProvider.of<OrderBloc>(context)
+                      .add(OrderEvent.placeOrder(request));
+                  clearCartData();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Order Placed Successfully'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                  changeIndexNotifier.value = 0;
+
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return OrderAcceptedWidget();
+                  }));
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Cannot place order: Cart is empty'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                }
               },
               child: const Text(
                 'CHECKOUT NOW',
@@ -89,12 +97,6 @@ class CheckoutCardWidget extends StatelessWidget {
               ),
             ),
           )
-          // ElevatedButton(
-          //   onPressed: () {
-          //     // Handle checkout action
-          //   },
-          //   child: Text('Checkout'),
-          // ),
         ],
       ),
     );

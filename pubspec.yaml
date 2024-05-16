@@ -56,6 +56,8 @@ flutter:
     - assets/images/apple.png
     - assets/images/banana.png
     - assets/images/pappaya.png
+    - assets/images/bg-white.jpg
+    - assets/images/order-accepted.png
   #   - images/a_dot_ham.jpeg
   # example:
   # fonts:

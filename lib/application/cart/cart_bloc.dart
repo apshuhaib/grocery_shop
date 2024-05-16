@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:e_commerce_test/domain/cart/cart_service.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
@@ -17,13 +18,65 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   // int cartCount = 0;
   CartBloc(this._cartService) : super(const _Initial()) {
     //add to cart
+    // on<OnAddToCart>((event, emit) async {
+    //   try {
+    //     final _box = await Hive.openBox<CartModel>('cart');
+    //     await _box.add(event.cartItem);
+    //     final cartItems = _cartService.getCartItems();
+    //     // cartCount++;
+    //     emit(CartState.loaded(cartItems));
+    //   } catch (_) {
+    //     emit(const CartState.error());
+    //   }
+    // });
+    // on<OnAddToCart>((event, emit) async {
+    //   try {
+    //     final _box = await Hive.openBox<CartModel>('cart');
+
+    //     // Check if the product already exists in the cart
+    //     final existingProductIndex = _box.values
+    //         .toList()
+    //         .indexWhere((item) => item.productId == event.cartItem.productId);
+    //     if (existingProductIndex != -1) {
+    //       // Product already exists in the cart, show snackbar
+    //       emit(const CartState.error());
+    //       return;
+    //     }
+
+    //     // Product does not exist in the cart, add it
+    //     await _box.add(event.cartItem);
+    //     final cartItems = _cartService.getCartItems();
+    //     emit(CartState.loaded(cartItems));
+    //   } catch (_) {
+    //     emit(const CartState.error());
+    //   }
+    // });
     on<OnAddToCart>((event, emit) async {
       try {
         final _box = await Hive.openBox<CartModel>('cart');
-        await _box.add(event.cartItem);
-        final cartItems = _cartService.getCartItems();
-        // cartCount++;
-        emit(CartState.loaded(cartItems));
+        final List<CartModel> cartItems = _box.values.toList();
+
+        // Check if the product already exists in the cart
+        bool productExists =
+            cartItems.any((item) => item.productId == event.cartItem.productId);
+
+        if (productExists) {
+          // Product already exists, show error message
+          ScaffoldMessenger.of(event.context!).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'This product is already in the cart.',
+                style: TextStyle(fontSize: 20, color: Colors.red),
+              ),
+              duration: Duration(seconds: 2),
+            ),
+          );
+        } else {
+          // Product doesn't exist, add it to the cart
+          await _box.add(event.cartItem);
+          final updatedCartItems = _cartService.getCartItems();
+          emit(CartState.loaded(updatedCartItems));
+        }
       } catch (_) {
         emit(const CartState.error());
       }

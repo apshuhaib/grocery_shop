@@ -2,7 +2,8 @@ part of 'cart_bloc.dart';
 
 @freezed
 class CartEvent with _$CartEvent {
-  const factory CartEvent.onAddToCart(CartModel cartItem) = OnAddToCart;
+  const factory CartEvent.onAddToCart(
+      CartModel cartItem, BuildContext context) = OnAddToCart;
   const factory CartEvent.onRemovefromCart(String productId) = onRemovefromCart;
   const factory CartEvent.loadCart() = LoadCart;
   const factory CartEvent.clearCart() = ClearCart;

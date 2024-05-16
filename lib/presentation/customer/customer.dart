@@ -46,7 +46,9 @@ class CustomerPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.align_horizontal_right),
           ),
         ],

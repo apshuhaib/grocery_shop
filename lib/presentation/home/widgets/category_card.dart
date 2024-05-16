@@ -52,7 +52,7 @@ class CategoriesCard extends StatelessWidget {
               final product = categoriesProducts[index];
               return Container(
                 width: 70,
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                margin: const EdgeInsets.symmetric(horizontal: 10.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                 ),
