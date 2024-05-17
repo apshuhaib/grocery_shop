@@ -28,7 +28,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           ScaffoldMessenger.of(event.context!).showSnackBar(
             const SnackBar(
               content: Text(
-                'This product is already in the cart.',
+                'This product is already added in the cart.',
                 style: TextStyle(fontSize: 20, color: Colors.red),
               ),
               duration: Duration(seconds: 2),

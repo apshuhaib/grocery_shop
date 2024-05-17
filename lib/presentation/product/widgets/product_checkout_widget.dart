@@ -43,21 +43,19 @@ class ProductCheckout extends StatelessWidget {
               color: kgreen,
               borderRadius: BorderRadius.circular(18),
             ),
-            child: Center(
-              child: TextButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return CustomerPage();
-                  }));
-                },
-                child: const Text(
-                  'CHECKOUT NOW',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: kwhiteColor,
-                  ),
+            child: TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return CustomerPage();
+                }));
+              },
+              child: const Text(
+                'CHECKOUT NOW',
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: kwhiteColor,
                 ),
               ),
             ),

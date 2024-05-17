@@ -23,14 +23,9 @@ mixin _$CartEvent {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,14 +34,9 @@ mixin _$CartEvent {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,14 +45,9 @@ mixin _$CartEvent {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,14 +57,9 @@ mixin _$CartEvent {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,14 +68,9 @@ mixin _$CartEvent {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -104,14 +79,9 @@ mixin _$CartEvent {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -212,14 +182,9 @@ class _$OnAddToCartImpl implements OnAddToCart {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return onAddToCart(cartItem, context);
   }
@@ -231,14 +196,9 @@ class _$OnAddToCartImpl implements OnAddToCart {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return onAddToCart?.call(cartItem, context);
   }
@@ -250,14 +210,9 @@ class _$OnAddToCartImpl implements OnAddToCart {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (onAddToCart != null) {
@@ -273,14 +228,9 @@ class _$OnAddToCartImpl implements OnAddToCart {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return onAddToCart(this);
   }
@@ -292,14 +242,9 @@ class _$OnAddToCartImpl implements OnAddToCart {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return onAddToCart?.call(this);
   }
@@ -311,14 +256,9 @@ class _$OnAddToCartImpl implements OnAddToCart {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (onAddToCart != null) {
@@ -410,14 +350,9 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return onRemovefromCart(productId);
   }
@@ -429,14 +364,9 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return onRemovefromCart?.call(productId);
   }
@@ -448,14 +378,9 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (onRemovefromCart != null) {
@@ -471,14 +396,9 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return onRemovefromCart(this);
   }
@@ -490,14 +410,9 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return onRemovefromCart?.call(this);
   }
@@ -509,14 +424,9 @@ class _$onRemovefromCartImpl implements onRemovefromCart {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (onRemovefromCart != null) {
@@ -579,14 +489,9 @@ class _$LoadCartImpl implements LoadCart {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return loadCart();
   }
@@ -598,14 +503,9 @@ class _$LoadCartImpl implements LoadCart {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return loadCart?.call();
   }
@@ -617,14 +517,9 @@ class _$LoadCartImpl implements LoadCart {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (loadCart != null) {
@@ -640,14 +535,9 @@ class _$LoadCartImpl implements LoadCart {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return loadCart(this);
   }
@@ -659,14 +549,9 @@ class _$LoadCartImpl implements LoadCart {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return loadCart?.call(this);
   }
@@ -678,14 +563,9 @@ class _$LoadCartImpl implements LoadCart {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (loadCart != null) {
@@ -742,14 +622,9 @@ class _$ClearCartImpl implements ClearCart {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return clearCart();
   }
@@ -761,14 +636,9 @@ class _$ClearCartImpl implements ClearCart {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return clearCart?.call();
   }
@@ -780,14 +650,9 @@ class _$ClearCartImpl implements ClearCart {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (clearCart != null) {
@@ -803,14 +668,9 @@ class _$ClearCartImpl implements ClearCart {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return clearCart(this);
   }
@@ -822,14 +682,9 @@ class _$ClearCartImpl implements ClearCart {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return clearCart?.call(this);
   }
@@ -841,14 +696,9 @@ class _$ClearCartImpl implements ClearCart {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (clearCart != null) {
@@ -860,203 +710,6 @@ class _$ClearCartImpl implements ClearCart {
 
 abstract class ClearCart implements CartEvent {
   const factory ClearCart() = _$ClearCartImpl;
-}
-
-/// @nodoc
-abstract class _$$UpdateCartItemImplCopyWith<$Res> {
-  factory _$$UpdateCartItemImplCopyWith(_$UpdateCartItemImpl value,
-          $Res Function(_$UpdateCartItemImpl) then) =
-      __$$UpdateCartItemImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({CartModel updatedItem});
-}
-
-/// @nodoc
-class __$$UpdateCartItemImplCopyWithImpl<$Res>
-    extends _$CartEventCopyWithImpl<$Res, _$UpdateCartItemImpl>
-    implements _$$UpdateCartItemImplCopyWith<$Res> {
-  __$$UpdateCartItemImplCopyWithImpl(
-      _$UpdateCartItemImpl _value, $Res Function(_$UpdateCartItemImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? updatedItem = null,
-  }) {
-    return _then(_$UpdateCartItemImpl(
-      null == updatedItem
-          ? _value.updatedItem
-          : updatedItem // ignore: cast_nullable_to_non_nullable
-              as CartModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateCartItemImpl implements UpdateCartItem {
-  const _$UpdateCartItemImpl(this.updatedItem);
-
-  @override
-  final CartModel updatedItem;
-
-  @override
-  String toString() {
-    return 'CartEvent.updateCartItem(updatedItem: $updatedItem)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateCartItemImpl &&
-            (identical(other.updatedItem, updatedItem) ||
-                other.updatedItem == updatedItem));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, updatedItem);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateCartItemImplCopyWith<_$UpdateCartItemImpl> get copyWith =>
-      __$$UpdateCartItemImplCopyWithImpl<_$UpdateCartItemImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem, BuildContext context)
-        onAddToCart,
-    required TResult Function(String productId) onRemovefromCart,
-    required TResult Function() loadCart,
-    required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
-    required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
-    required TResult Function(CartModel cartItem) incrementCartItem,
-    required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
-  }) {
-    return updateCartItem(updatedItem);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult? Function(String productId)? onRemovefromCart,
-    TResult? Function()? loadCart,
-    TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
-    TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
-    TResult? Function(CartModel cartItem)? incrementCartItem,
-    TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
-  }) {
-    return updateCartItem?.call(updatedItem);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult Function(String productId)? onRemovefromCart,
-    TResult Function()? loadCart,
-    TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
-    TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
-    TResult Function(CartModel cartItem)? incrementCartItem,
-    TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
-    required TResult orElse(),
-  }) {
-    if (updateCartItem != null) {
-      return updateCartItem(updatedItem);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(OnAddToCart value) onAddToCart,
-    required TResult Function(onRemovefromCart value) onRemovefromCart,
-    required TResult Function(LoadCart value) loadCart,
-    required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
-    required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
-    required TResult Function(IncrementCartItem value) incrementCartItem,
-    required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
-  }) {
-    return updateCartItem(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnAddToCart value)? onAddToCart,
-    TResult? Function(onRemovefromCart value)? onRemovefromCart,
-    TResult? Function(LoadCart value)? loadCart,
-    TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
-    TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult? Function(IncrementCartItem value)? incrementCartItem,
-    TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
-  }) {
-    return updateCartItem?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnAddToCart value)? onAddToCart,
-    TResult Function(onRemovefromCart value)? onRemovefromCart,
-    TResult Function(LoadCart value)? loadCart,
-    TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
-    TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult Function(IncrementCartItem value)? incrementCartItem,
-    TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
-    required TResult orElse(),
-  }) {
-    if (updateCartItem != null) {
-      return updateCartItem(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateCartItem implements CartEvent {
-  const factory UpdateCartItem(final CartModel updatedItem) =
-      _$UpdateCartItemImpl;
-
-  CartModel get updatedItem;
-  @JsonKey(ignore: true)
-  _$$UpdateCartItemImplCopyWith<_$UpdateCartItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1102,14 +755,9 @@ class _$CheckoutImpl implements Checkout {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return checkout();
   }
@@ -1121,14 +769,9 @@ class _$CheckoutImpl implements Checkout {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return checkout?.call();
   }
@@ -1140,14 +783,9 @@ class _$CheckoutImpl implements Checkout {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (checkout != null) {
@@ -1163,14 +801,9 @@ class _$CheckoutImpl implements Checkout {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return checkout(this);
   }
@@ -1182,14 +815,9 @@ class _$CheckoutImpl implements Checkout {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return checkout?.call(this);
   }
@@ -1201,14 +829,9 @@ class _$CheckoutImpl implements Checkout {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (checkout != null) {
@@ -1220,364 +843,6 @@ class _$CheckoutImpl implements Checkout {
 
 abstract class Checkout implements CartEvent {
   const factory Checkout() = _$CheckoutImpl;
-}
-
-/// @nodoc
-abstract class _$$ApplyCouponImplCopyWith<$Res> {
-  factory _$$ApplyCouponImplCopyWith(
-          _$ApplyCouponImpl value, $Res Function(_$ApplyCouponImpl) then) =
-      __$$ApplyCouponImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String couponCode});
-}
-
-/// @nodoc
-class __$$ApplyCouponImplCopyWithImpl<$Res>
-    extends _$CartEventCopyWithImpl<$Res, _$ApplyCouponImpl>
-    implements _$$ApplyCouponImplCopyWith<$Res> {
-  __$$ApplyCouponImplCopyWithImpl(
-      _$ApplyCouponImpl _value, $Res Function(_$ApplyCouponImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? couponCode = null,
-  }) {
-    return _then(_$ApplyCouponImpl(
-      null == couponCode
-          ? _value.couponCode
-          : couponCode // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ApplyCouponImpl implements ApplyCoupon {
-  const _$ApplyCouponImpl(this.couponCode);
-
-  @override
-  final String couponCode;
-
-  @override
-  String toString() {
-    return 'CartEvent.applyCoupon(couponCode: $couponCode)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApplyCouponImpl &&
-            (identical(other.couponCode, couponCode) ||
-                other.couponCode == couponCode));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, couponCode);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ApplyCouponImplCopyWith<_$ApplyCouponImpl> get copyWith =>
-      __$$ApplyCouponImplCopyWithImpl<_$ApplyCouponImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem, BuildContext context)
-        onAddToCart,
-    required TResult Function(String productId) onRemovefromCart,
-    required TResult Function() loadCart,
-    required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
-    required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
-    required TResult Function(CartModel cartItem) incrementCartItem,
-    required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
-  }) {
-    return applyCoupon(couponCode);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult? Function(String productId)? onRemovefromCart,
-    TResult? Function()? loadCart,
-    TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
-    TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
-    TResult? Function(CartModel cartItem)? incrementCartItem,
-    TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
-  }) {
-    return applyCoupon?.call(couponCode);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult Function(String productId)? onRemovefromCart,
-    TResult Function()? loadCart,
-    TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
-    TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
-    TResult Function(CartModel cartItem)? incrementCartItem,
-    TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
-    required TResult orElse(),
-  }) {
-    if (applyCoupon != null) {
-      return applyCoupon(couponCode);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(OnAddToCart value) onAddToCart,
-    required TResult Function(onRemovefromCart value) onRemovefromCart,
-    required TResult Function(LoadCart value) loadCart,
-    required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
-    required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
-    required TResult Function(IncrementCartItem value) incrementCartItem,
-    required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
-  }) {
-    return applyCoupon(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnAddToCart value)? onAddToCart,
-    TResult? Function(onRemovefromCart value)? onRemovefromCart,
-    TResult? Function(LoadCart value)? loadCart,
-    TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
-    TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult? Function(IncrementCartItem value)? incrementCartItem,
-    TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
-  }) {
-    return applyCoupon?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnAddToCart value)? onAddToCart,
-    TResult Function(onRemovefromCart value)? onRemovefromCart,
-    TResult Function(LoadCart value)? loadCart,
-    TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
-    TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult Function(IncrementCartItem value)? incrementCartItem,
-    TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
-    required TResult orElse(),
-  }) {
-    if (applyCoupon != null) {
-      return applyCoupon(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ApplyCoupon implements CartEvent {
-  const factory ApplyCoupon(final String couponCode) = _$ApplyCouponImpl;
-
-  String get couponCode;
-  @JsonKey(ignore: true)
-  _$$ApplyCouponImplCopyWith<_$ApplyCouponImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RemoveAllCouponsImplCopyWith<$Res> {
-  factory _$$RemoveAllCouponsImplCopyWith(_$RemoveAllCouponsImpl value,
-          $Res Function(_$RemoveAllCouponsImpl) then) =
-      __$$RemoveAllCouponsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RemoveAllCouponsImplCopyWithImpl<$Res>
-    extends _$CartEventCopyWithImpl<$Res, _$RemoveAllCouponsImpl>
-    implements _$$RemoveAllCouponsImplCopyWith<$Res> {
-  __$$RemoveAllCouponsImplCopyWithImpl(_$RemoveAllCouponsImpl _value,
-      $Res Function(_$RemoveAllCouponsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RemoveAllCouponsImpl implements RemoveAllCoupons {
-  const _$RemoveAllCouponsImpl();
-
-  @override
-  String toString() {
-    return 'CartEvent.removeAllCoupons()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RemoveAllCouponsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem, BuildContext context)
-        onAddToCart,
-    required TResult Function(String productId) onRemovefromCart,
-    required TResult Function() loadCart,
-    required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
-    required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
-    required TResult Function(CartModel cartItem) incrementCartItem,
-    required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
-  }) {
-    return removeAllCoupons();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult? Function(String productId)? onRemovefromCart,
-    TResult? Function()? loadCart,
-    TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
-    TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
-    TResult? Function(CartModel cartItem)? incrementCartItem,
-    TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
-  }) {
-    return removeAllCoupons?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult Function(String productId)? onRemovefromCart,
-    TResult Function()? loadCart,
-    TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
-    TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
-    TResult Function(CartModel cartItem)? incrementCartItem,
-    TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
-    required TResult orElse(),
-  }) {
-    if (removeAllCoupons != null) {
-      return removeAllCoupons();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(OnAddToCart value) onAddToCart,
-    required TResult Function(onRemovefromCart value) onRemovefromCart,
-    required TResult Function(LoadCart value) loadCart,
-    required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
-    required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
-    required TResult Function(IncrementCartItem value) incrementCartItem,
-    required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
-  }) {
-    return removeAllCoupons(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnAddToCart value)? onAddToCart,
-    TResult? Function(onRemovefromCart value)? onRemovefromCart,
-    TResult? Function(LoadCart value)? loadCart,
-    TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
-    TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult? Function(IncrementCartItem value)? incrementCartItem,
-    TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
-  }) {
-    return removeAllCoupons?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnAddToCart value)? onAddToCart,
-    TResult Function(onRemovefromCart value)? onRemovefromCart,
-    TResult Function(LoadCart value)? loadCart,
-    TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
-    TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult Function(IncrementCartItem value)? incrementCartItem,
-    TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
-    required TResult orElse(),
-  }) {
-    if (removeAllCoupons != null) {
-      return removeAllCoupons(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RemoveAllCoupons implements CartEvent {
-  const factory RemoveAllCoupons() = _$RemoveAllCouponsImpl;
 }
 
 /// @nodoc
@@ -1651,14 +916,9 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return incrementCartItem(cartItem);
   }
@@ -1670,14 +930,9 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return incrementCartItem?.call(cartItem);
   }
@@ -1689,14 +944,9 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (incrementCartItem != null) {
@@ -1712,14 +962,9 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return incrementCartItem(this);
   }
@@ -1731,14 +976,9 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return incrementCartItem?.call(this);
   }
@@ -1750,14 +990,9 @@ class _$IncrementCartItemImpl implements IncrementCartItem {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (incrementCartItem != null) {
@@ -1848,14 +1083,9 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
     required TResult Function(String productId) onRemovefromCart,
     required TResult Function() loadCart,
     required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
     required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
     required TResult Function(CartModel cartItem) incrementCartItem,
     required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
   }) {
     return decrementCartItem(cartItem);
   }
@@ -1867,14 +1097,9 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
     TResult? Function(String productId)? onRemovefromCart,
     TResult? Function()? loadCart,
     TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
     TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
     TResult? Function(CartModel cartItem)? incrementCartItem,
     TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
   }) {
     return decrementCartItem?.call(cartItem);
   }
@@ -1886,14 +1111,9 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
     TResult Function(String productId)? onRemovefromCart,
     TResult Function()? loadCart,
     TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
     TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
     TResult Function(CartModel cartItem)? incrementCartItem,
     TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
     required TResult orElse(),
   }) {
     if (decrementCartItem != null) {
@@ -1909,14 +1129,9 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
     required TResult Function(onRemovefromCart value) onRemovefromCart,
     required TResult Function(LoadCart value) loadCart,
     required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
     required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
     required TResult Function(IncrementCartItem value) incrementCartItem,
     required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
   }) {
     return decrementCartItem(this);
   }
@@ -1928,14 +1143,9 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
     TResult? Function(onRemovefromCart value)? onRemovefromCart,
     TResult? Function(LoadCart value)? loadCart,
     TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
     TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult? Function(IncrementCartItem value)? incrementCartItem,
     TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
   }) {
     return decrementCartItem?.call(this);
   }
@@ -1947,14 +1157,9 @@ class _$DecrementCartItemImpl implements DecrementCartItem {
     TResult Function(onRemovefromCart value)? onRemovefromCart,
     TResult Function(LoadCart value)? loadCart,
     TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
     TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
     TResult Function(IncrementCartItem value)? incrementCartItem,
     TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
     required TResult orElse(),
   }) {
     if (decrementCartItem != null) {
@@ -1972,365 +1177,6 @@ abstract class DecrementCartItem implements CartEvent {
   @JsonKey(ignore: true)
   _$$DecrementCartItemImplCopyWith<_$DecrementCartItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$MoveToWishlistImplCopyWith<$Res> {
-  factory _$$MoveToWishlistImplCopyWith(_$MoveToWishlistImpl value,
-          $Res Function(_$MoveToWishlistImpl) then) =
-      __$$MoveToWishlistImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({CartModel cartItem});
-}
-
-/// @nodoc
-class __$$MoveToWishlistImplCopyWithImpl<$Res>
-    extends _$CartEventCopyWithImpl<$Res, _$MoveToWishlistImpl>
-    implements _$$MoveToWishlistImplCopyWith<$Res> {
-  __$$MoveToWishlistImplCopyWithImpl(
-      _$MoveToWishlistImpl _value, $Res Function(_$MoveToWishlistImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? cartItem = null,
-  }) {
-    return _then(_$MoveToWishlistImpl(
-      null == cartItem
-          ? _value.cartItem
-          : cartItem // ignore: cast_nullable_to_non_nullable
-              as CartModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$MoveToWishlistImpl implements MoveToWishlist {
-  const _$MoveToWishlistImpl(this.cartItem);
-
-  @override
-  final CartModel cartItem;
-
-  @override
-  String toString() {
-    return 'CartEvent.moveToWishlist(cartItem: $cartItem)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MoveToWishlistImpl &&
-            (identical(other.cartItem, cartItem) ||
-                other.cartItem == cartItem));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, cartItem);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MoveToWishlistImplCopyWith<_$MoveToWishlistImpl> get copyWith =>
-      __$$MoveToWishlistImplCopyWithImpl<_$MoveToWishlistImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem, BuildContext context)
-        onAddToCart,
-    required TResult Function(String productId) onRemovefromCart,
-    required TResult Function() loadCart,
-    required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
-    required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
-    required TResult Function(CartModel cartItem) incrementCartItem,
-    required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
-  }) {
-    return moveToWishlist(cartItem);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult? Function(String productId)? onRemovefromCart,
-    TResult? Function()? loadCart,
-    TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
-    TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
-    TResult? Function(CartModel cartItem)? incrementCartItem,
-    TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
-  }) {
-    return moveToWishlist?.call(cartItem);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult Function(String productId)? onRemovefromCart,
-    TResult Function()? loadCart,
-    TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
-    TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
-    TResult Function(CartModel cartItem)? incrementCartItem,
-    TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
-    required TResult orElse(),
-  }) {
-    if (moveToWishlist != null) {
-      return moveToWishlist(cartItem);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(OnAddToCart value) onAddToCart,
-    required TResult Function(onRemovefromCart value) onRemovefromCart,
-    required TResult Function(LoadCart value) loadCart,
-    required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
-    required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
-    required TResult Function(IncrementCartItem value) incrementCartItem,
-    required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
-  }) {
-    return moveToWishlist(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnAddToCart value)? onAddToCart,
-    TResult? Function(onRemovefromCart value)? onRemovefromCart,
-    TResult? Function(LoadCart value)? loadCart,
-    TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
-    TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult? Function(IncrementCartItem value)? incrementCartItem,
-    TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
-  }) {
-    return moveToWishlist?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnAddToCart value)? onAddToCart,
-    TResult Function(onRemovefromCart value)? onRemovefromCart,
-    TResult Function(LoadCart value)? loadCart,
-    TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
-    TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult Function(IncrementCartItem value)? incrementCartItem,
-    TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
-    required TResult orElse(),
-  }) {
-    if (moveToWishlist != null) {
-      return moveToWishlist(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MoveToWishlist implements CartEvent {
-  const factory MoveToWishlist(final CartModel cartItem) = _$MoveToWishlistImpl;
-
-  CartModel get cartItem;
-  @JsonKey(ignore: true)
-  _$$MoveToWishlistImplCopyWith<_$MoveToWishlistImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SyncCartImplCopyWith<$Res> {
-  factory _$$SyncCartImplCopyWith(
-          _$SyncCartImpl value, $Res Function(_$SyncCartImpl) then) =
-      __$$SyncCartImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SyncCartImplCopyWithImpl<$Res>
-    extends _$CartEventCopyWithImpl<$Res, _$SyncCartImpl>
-    implements _$$SyncCartImplCopyWith<$Res> {
-  __$$SyncCartImplCopyWithImpl(
-      _$SyncCartImpl _value, $Res Function(_$SyncCartImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SyncCartImpl implements SyncCart {
-  const _$SyncCartImpl();
-
-  @override
-  String toString() {
-    return 'CartEvent.syncCart()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SyncCartImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CartModel cartItem, BuildContext context)
-        onAddToCart,
-    required TResult Function(String productId) onRemovefromCart,
-    required TResult Function() loadCart,
-    required TResult Function() clearCart,
-    required TResult Function(CartModel updatedItem) updateCartItem,
-    required TResult Function() checkout,
-    required TResult Function(String couponCode) applyCoupon,
-    required TResult Function() removeAllCoupons,
-    required TResult Function(CartModel cartItem) incrementCartItem,
-    required TResult Function(CartModel cartItem) decrementCartItem,
-    required TResult Function(CartModel cartItem) moveToWishlist,
-    required TResult Function() syncCart,
-  }) {
-    return syncCart();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult? Function(String productId)? onRemovefromCart,
-    TResult? Function()? loadCart,
-    TResult? Function()? clearCart,
-    TResult? Function(CartModel updatedItem)? updateCartItem,
-    TResult? Function()? checkout,
-    TResult? Function(String couponCode)? applyCoupon,
-    TResult? Function()? removeAllCoupons,
-    TResult? Function(CartModel cartItem)? incrementCartItem,
-    TResult? Function(CartModel cartItem)? decrementCartItem,
-    TResult? Function(CartModel cartItem)? moveToWishlist,
-    TResult? Function()? syncCart,
-  }) {
-    return syncCart?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartModel cartItem, BuildContext context)? onAddToCart,
-    TResult Function(String productId)? onRemovefromCart,
-    TResult Function()? loadCart,
-    TResult Function()? clearCart,
-    TResult Function(CartModel updatedItem)? updateCartItem,
-    TResult Function()? checkout,
-    TResult Function(String couponCode)? applyCoupon,
-    TResult Function()? removeAllCoupons,
-    TResult Function(CartModel cartItem)? incrementCartItem,
-    TResult Function(CartModel cartItem)? decrementCartItem,
-    TResult Function(CartModel cartItem)? moveToWishlist,
-    TResult Function()? syncCart,
-    required TResult orElse(),
-  }) {
-    if (syncCart != null) {
-      return syncCart();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(OnAddToCart value) onAddToCart,
-    required TResult Function(onRemovefromCart value) onRemovefromCart,
-    required TResult Function(LoadCart value) loadCart,
-    required TResult Function(ClearCart value) clearCart,
-    required TResult Function(UpdateCartItem value) updateCartItem,
-    required TResult Function(Checkout value) checkout,
-    required TResult Function(ApplyCoupon value) applyCoupon,
-    required TResult Function(RemoveAllCoupons value) removeAllCoupons,
-    required TResult Function(IncrementCartItem value) incrementCartItem,
-    required TResult Function(DecrementCartItem value) decrementCartItem,
-    required TResult Function(MoveToWishlist value) moveToWishlist,
-    required TResult Function(SyncCart value) syncCart,
-  }) {
-    return syncCart(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnAddToCart value)? onAddToCart,
-    TResult? Function(onRemovefromCart value)? onRemovefromCart,
-    TResult? Function(LoadCart value)? loadCart,
-    TResult? Function(ClearCart value)? clearCart,
-    TResult? Function(UpdateCartItem value)? updateCartItem,
-    TResult? Function(Checkout value)? checkout,
-    TResult? Function(ApplyCoupon value)? applyCoupon,
-    TResult? Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult? Function(IncrementCartItem value)? incrementCartItem,
-    TResult? Function(DecrementCartItem value)? decrementCartItem,
-    TResult? Function(MoveToWishlist value)? moveToWishlist,
-    TResult? Function(SyncCart value)? syncCart,
-  }) {
-    return syncCart?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnAddToCart value)? onAddToCart,
-    TResult Function(onRemovefromCart value)? onRemovefromCart,
-    TResult Function(LoadCart value)? loadCart,
-    TResult Function(ClearCart value)? clearCart,
-    TResult Function(UpdateCartItem value)? updateCartItem,
-    TResult Function(Checkout value)? checkout,
-    TResult Function(ApplyCoupon value)? applyCoupon,
-    TResult Function(RemoveAllCoupons value)? removeAllCoupons,
-    TResult Function(IncrementCartItem value)? incrementCartItem,
-    TResult Function(DecrementCartItem value)? decrementCartItem,
-    TResult Function(MoveToWishlist value)? moveToWishlist,
-    TResult Function(SyncCart value)? syncCart,
-    required TResult orElse(),
-  }) {
-    if (syncCart != null) {
-      return syncCart(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SyncCart implements CartEvent {
-  const factory SyncCart() = _$SyncCartImpl;
 }
 
 /// @nodoc

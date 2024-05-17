@@ -6,7 +6,6 @@ import 'package:e_commerce_test/core/strings.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/cart_icon_widget.dart';
-import 'package:e_commerce_test/presentation/customer/customer.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_checkout_widget.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_items_card.dart';
 import 'package:flutter/material.dart';

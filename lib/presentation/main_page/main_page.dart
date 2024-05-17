@@ -10,7 +10,7 @@ class MainPage extends StatelessWidget {
 
   final _pages = [
     HomePage(),
-    const ProductsPage(),
+    ProductsPage(),
     CustomerPage(),
   ];
 
