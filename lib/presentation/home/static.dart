@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 List discoveryProducts = [
   {
+    "id": 10,
     "name": "Chicken Brolier",
     "icon": "assets/images/chicken_broiler.png",
     "qty": "7",
     "price": "\$35/kg",
   },
   {
+    "id": 11,
     "name": "Beef Tenderloin",
     "icon": "assets/images/beef.png",
     "qty": "7",

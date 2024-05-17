@@ -55,7 +55,9 @@ class _HomePageState extends State<HomePage> {
                 CarouselCard(),
                 kHeight20,
                 CategoriesCard(),
+                kHeight20,
                 DiscoverCard(),
+                kHeight20,
               ] else ...[
                 const SizedBox(height: 20),
                 Text('Search Results:'),

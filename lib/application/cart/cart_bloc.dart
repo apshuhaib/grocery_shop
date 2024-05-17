@@ -13,7 +13,7 @@ part 'cart_bloc.freezed.dart';
 @injectable
 class CartBloc extends Bloc<CartEvent, CartState> {
   final CartService _cartService;
-  // int cartCount = 0;
+
   CartBloc(this._cartService) : super(const _Initial()) {
     //add to cart
     on<OnAddToCart>((event, emit) async {
@@ -37,6 +37,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         } else {
           await _box.add(event.cartItem);
           final updatedCartItems = _cartService.getCartItems();
+
           emit(CartState.loaded(updatedCartItems));
         }
       } catch (_) {

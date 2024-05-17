@@ -19,13 +19,14 @@ class CustomerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return InkWell(
       onTap: onTap,
       child: Card(
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 15),
-          width: double.infinity,
-          height: 140,
+          width: size.width,
+          height: 110,
           // color: Colors.blue,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +63,7 @@ class CustomerCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       customerName,
                       style: const TextStyle(
-                          fontSize: 24, fontWeight: FontWeight.bold),
+                          fontSize: 22, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "ID : $customerId",
@@ -73,6 +74,7 @@ class CustomerCard extends StatelessWidget {
                     ),
                     Text(
                       customerAddress,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

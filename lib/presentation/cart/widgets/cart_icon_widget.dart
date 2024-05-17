@@ -11,11 +11,12 @@ class CartIconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      BlocProvider.of<CartBloc>(context).add(CartEvent.loadCart());
+      BlocProvider.of<CartBloc>(context).add(const CartEvent.loadCart());
     });
     return Center(
       child: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
+          cartCount;
           return Badge(
             label: Text('0'),
             child: const Icon(

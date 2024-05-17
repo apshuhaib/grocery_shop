@@ -7,6 +7,7 @@ import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/cart_icon_widget.dart';
 import 'package:e_commerce_test/presentation/customer/customer.dart';
+import 'package:e_commerce_test/presentation/product/widgets/product_checkout_widget.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_items_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -115,56 +116,9 @@ class ProductsPage extends StatelessWidget {
               },
             ),
           ),
-          Container(
-            color: Colors.green[100],
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Subtotal', // Replace with actual total
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green[400],
-                          fontSize: 16),
-                    ),
-                    const Text(
-                      '\100', // Replace with actual total
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: kgreen,
-                          fontSize: 25),
-                    ),
-                  ],
-                ),
-                Container(
-                  width: 200,
-                  height: 55,
-                  decoration: BoxDecoration(
-                    color: kgreen,
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return CustomerPage();
-                      }));
-                    },
-                    child: const Text(
-                      'CHECKOUT NOW',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: kwhiteColor,
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            child: ProductCheckout(),
           ),
         ],
       ),

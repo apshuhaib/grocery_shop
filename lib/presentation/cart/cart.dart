@@ -35,13 +35,6 @@ class _CartState extends State<Cart> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        actions: [
-          TextButton(
-              onPressed: () async {
-                clearCartData();
-              },
-              child: Text('clear'))
-        ],
       ),
       body: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
@@ -81,9 +74,13 @@ class _CartState extends State<Cart> {
                       },
                     ),
                   ),
-                  CheckoutCardWidget(
-                    cartItems: cartItems,
-                    subtotal: subtotal,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 15),
+                    child: CheckoutCardWidget(
+                      cartItems: cartItems,
+                      subtotal: subtotal,
+                    ),
                   ),
                 ],
               );
