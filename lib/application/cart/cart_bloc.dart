@@ -25,15 +25,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
             cartItems.any((item) => item.productId == event.cartItem.productId);
 
         if (productExists) {
-          ScaffoldMessenger.of(event.context!).showSnackBar(
-            const SnackBar(
-              content: Text(
-                'This product is already added in the cart.',
-                style: TextStyle(fontSize: 20, color: Colors.red),
-              ),
-              duration: Duration(seconds: 2),
-            ),
-          );
         } else {
           await _box.add(event.cartItem);
           final updatedCartItems = _cartService.getCartItems();

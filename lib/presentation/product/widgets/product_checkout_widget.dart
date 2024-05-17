@@ -3,8 +3,10 @@ import 'package:e_commerce_test/presentation/customer/customer.dart';
 import 'package:flutter/material.dart';
 
 class ProductCheckout extends StatelessWidget {
+  final double subtotal;
   const ProductCheckout({
     super.key,
+    required this.subtotal,
   });
 
   @override
@@ -29,8 +31,8 @@ class ProductCheckout extends StatelessWidget {
                     color: Colors.green[400],
                     fontSize: 16),
               ),
-              const Text(
-                '\100', // Replace with actual total
+              Text(
+                '\$$subtotal', // Replace with actual total
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: kgreen, fontSize: 25),
               ),

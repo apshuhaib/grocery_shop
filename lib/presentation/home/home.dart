@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: const PreferredSize(
+          appBar: PreferredSize(
             preferredSize: Size.fromHeight(50),
             child: AppBarMain(title: 'Good Day!👋'),
           ),

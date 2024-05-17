@@ -12,7 +12,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsPage extends StatelessWidget {
-  const ProductsPage({super.key});
+  ProductsPage({super.key});
+  ValueNotifier<double> subtotalNotifier = ValueNotifier<double>(0.0);
+  final ValueNotifier<int> cartCountNotifier = ValueNotifier<int>(0);
+  final Set<String> addedProductIds = {};
+  double calculateSubtotal(List<CartModel> cartList) {
+    double total = 0;
+    for (final item in cartList) {
+      total += item.price * item.quantity;
+    }
+    return total;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +51,7 @@ class ProductsPage extends StatelessWidget {
         ),
         actions: [
           CartIconWidget(
+            cartCountNotifier: cartCountNotifier,
             onCartPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -87,23 +98,46 @@ class ProductsPage extends StatelessWidget {
                             (BuildContext context, int index) {
                               var products = state.productResultData[index];
                               return ProductsItemCard(
-                                productName: products.name ?? 'NA',
-                                imgUrl: '$imageAppendUrl${products.image}',
-                                price: products.price.toString(),
-                                onPressed: () {},
-                                onCartPressed: () async {
-                                  final product = CartModel(
-                                    productId: products.id.toString(),
-                                    productName: products.name!,
-                                    quantity: 1,
-                                    price: products.price!.toDouble(),
-                                    imageUrl: products.image!,
-                                  );
-                                  BlocProvider.of<CartBloc>(context).add(
-                                      CartEvent.onAddToCart(product, context));
-                                  print(product.productId);
-                                },
-                              );
+                                  productName: products.name ?? 'NA',
+                                  imgUrl: '$imageAppendUrl${products.image}',
+                                  price: products.price.toString(),
+                                  onPressed: () {},
+                                  onCartPressed: () async {
+                                    final product = CartModel(
+                                      productId: products.id.toString(),
+                                      productName: products.name!,
+                                      quantity: 1,
+                                      price: products.price!.toDouble(),
+                                      imageUrl: products.image!,
+                                    );
+                                    if (addedProductIds
+                                        .contains(product.productId)) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            '${product.productName} is already in the cart.',
+                                          ),
+                                        ),
+                                      );
+                                    } else {
+                                      BlocProvider.of<CartBloc>(context).add(
+                                          CartEvent.onAddToCart(
+                                              product, context));
+                                      addedProductIds.add(product.productId);
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            '${product.productName} added to the cart.',
+                                          ),
+                                        ),
+                                      );
+
+                                      subtotalNotifier.value += product.price!;
+                                      cartCountNotifier.value++;
+                                    }
+                                  });
                             },
                             childCount: state.productResultData.length,
                           ),
@@ -115,9 +149,13 @@ class ProductsPage extends StatelessWidget {
               },
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-            child: ProductCheckout(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            child: ValueListenableBuilder<double>(
+                valueListenable: subtotalNotifier,
+                builder: (context, value, child) {
+                  return ProductCheckout(subtotal: subtotalNotifier.value);
+                }),
           ),
         ],
       ),
