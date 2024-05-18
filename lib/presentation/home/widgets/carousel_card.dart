@@ -15,7 +15,7 @@ class CarouselCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      options: CarouselOptions(enableInfiniteScroll: false, height: 250.0),
+      options: CarouselOptions(enableInfiniteScroll: false, height: 200.0),
       items: imagePaths.map((String imagePath) {
         return Builder(
           builder: (BuildContext context) {
@@ -23,9 +23,9 @@ class CarouselCard extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.symmetric(horizontal: 10.0),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.amber),
+                  borderRadius: BorderRadius.circular(45), color: Colors.amber),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(45),
                 child: Image.asset(
                   imagePath, // Use the current image path
                   fit: BoxFit.cover,

@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 class AppBarMain extends StatelessWidget {
   final String title;
 
-  const AppBarMain({
+  AppBarMain({
     super.key,
     required this.title,
   });
-
+  final ValueNotifier<int> cartCountNotifier = ValueNotifier<int>(0);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,7 +27,7 @@ class AppBarMain extends StatelessWidget {
         CartIconWidget(
           onCartPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Cart();
+              return MyCart();
             }));
           },
         ),

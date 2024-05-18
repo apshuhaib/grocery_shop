@@ -59,6 +59,7 @@ flutter:
     - assets/images/pappaya.png
     - assets/images/bg-white.jpg
     - assets/images/order-accepted.png
+    - assets/images/whatsapp.png
   #   - images/a_dot_ham.jpeg
   # example:
   # fonts:
