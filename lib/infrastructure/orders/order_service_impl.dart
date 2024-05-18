@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:e_commerce_test/domain/core/api_endpoints.dart';
 import 'package:e_commerce_test/domain/orders/model/order_model.dart';
@@ -19,16 +20,12 @@ class OrderServiceimpl implements OrderService {
       );
 
       if (response.statusCode == 200) {
-        // If the server returns a 200 OK response, parse the JSON
-        // and return the order response
-        print(response.statusCode);
+        log(response.statusCode.toString());
         return OrderResponse.fromJson(response.data);
       } else {
-        // If the server returns an error response, throw an exception.
         throw Exception('Failed to place order: ${response.statusCode}');
       }
     } catch (e) {
-      // Catch any errors during the request and throw an exception
       throw Exception('Failed to place order: $e');
     }
   }

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:e_commerce_test/application/cart_shop/cartshop_bloc.dart';
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
@@ -6,6 +8,9 @@ import 'package:e_commerce_test/core/strings.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/cart_icon_widget.dart';
+import 'package:e_commerce_test/presentation/home/home.dart';
+import 'package:e_commerce_test/presentation/main_page/main_page.dart';
+import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_checkout_widget.dart';
 import 'package:e_commerce_test/presentation/product/widgets/product_items_card.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +28,14 @@ class ProductsPage extends StatelessWidget {
     });
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              changeIndexNotifier.value = 0;
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return MainPage();
+              }));
+            },
             icon: const Icon(
               Icons.arrow_back,
               size: 32,
@@ -40,16 +51,19 @@ class ProductsPage extends StatelessWidget {
           ),
         ),
         actions: [
-          CartIconWidget(
-            onCartPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return MyCart();
-                  },
-                ),
-              );
-            },
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 7),
+            child: CartIconWidget(
+              onCartPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MyCart();
+                    },
+                  ),
+                );
+              },
+            ),
           ),
           kWidth,
         ],
@@ -99,6 +113,7 @@ class ProductsPage extends StatelessWidget {
                                       price: products.price!.toDouble(),
                                       imageUrl: products.image!,
                                     );
+
                                     BlocProvider.of<CartshopBloc>(context)
                                         .add(CartshopEvent.addToCart(product));
                                   });

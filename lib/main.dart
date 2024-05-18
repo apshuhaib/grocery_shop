@@ -4,22 +4,15 @@ import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/domain/cart/cart_service.dart';
-import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/domain/core/di/injectable.dart';
-import 'package:e_commerce_test/infrastructure/cart/cart_service_impl.dart';
 import 'package:e_commerce_test/presentation/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureInjection();
-  // await Hive.initFlutter();
-  // if (!Hive.isAdapterRegistered(CartModelAdapter().typeId)) {
-  //   Hive.registerAdapter(CartModelAdapter());
-  // }
   final cartService = getIt<CartService>();
   await cartService.openBox();
   runApp(const MyApp());

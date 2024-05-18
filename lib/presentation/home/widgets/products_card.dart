@@ -47,7 +47,7 @@ class _ProductsCardState extends State<ProductsCard> {
                       isLiked = !isLiked;
                     });
                   },
-                  icon: Icon(Icons.favorite_outline_rounded),
+                  icon: const Icon(Icons.favorite_outline_rounded),
                   color: isLiked ? Colors.red : null,
                 )
               ],

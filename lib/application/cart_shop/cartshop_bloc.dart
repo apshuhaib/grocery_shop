@@ -1,5 +1,6 @@
 import 'package:e_commerce_test/domain/cart/cart_service.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +12,7 @@ part 'cartshop_bloc.freezed.dart';
 @injectable
 class CartshopBloc extends Bloc<CartshopEvent, CartshopState> {
   final CartService _cartService;
+
   CartshopBloc(this._cartService) : super(CartshopState.initial()) {
     //add to cart
     on<AddToCart>((event, emit) async {
@@ -32,8 +34,12 @@ class CartshopBloc extends Bloc<CartshopEvent, CartshopState> {
       try {
         final cartItems = _cartService.getCartItems();
         final totalPrice = _cartService.getTotalPrice();
+        final cartCount = await _cartService.getCartCountSharefPrefs();
         emit(state.copyWith(
-            cartItems: cartItems, totalPrice: totalPrice, isLoading: false));
+            cartItems: cartItems,
+            totalPrice: totalPrice,
+            isLoading: false,
+            cartCount: cartCount));
       } catch (e) {
         emit(state.copyWith(
             isLoading: false, isError: true, errorMessage: e.toString()));

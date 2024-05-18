@@ -85,7 +85,7 @@ class _CartItemCardState extends State<CartItemCard> {
                     children: [
                       if (widget.quantity > 1)
                         IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           onPressed: () {
                             BlocProvider.of<CartshopBloc>(context).add(
                                 CartshopEvent.decrementCartItem(
@@ -94,7 +94,7 @@ class _CartItemCardState extends State<CartItemCard> {
                         ),
                       if (widget.quantity == 1)
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.delete,
                             color: Colors.red,
                           ),
@@ -105,7 +105,7 @@ class _CartItemCardState extends State<CartItemCard> {
                         ),
                       Text(
                         '${widget.quantity}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -135,7 +135,7 @@ class _CartItemCardState extends State<CartItemCard> {
                   child: Center(
                     child: Text(
                       '${widget.quantity * widget.itemPrice}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: kgreen),

@@ -1,3 +1,4 @@
+import 'package:e_commerce_test/application/cart_shop/cartshop_bloc.dart';
 import 'package:e_commerce_test/core/constants.dart';
 import 'package:e_commerce_test/presentation/home/widgets/app_bar.dart';
 import 'package:e_commerce_test/presentation/home/widgets/carousel_card.dart';
@@ -6,6 +7,7 @@ import 'package:e_commerce_test/presentation/home/widgets/discovery_card.dart';
 import 'package:e_commerce_test/presentation/home/widgets/search_categories_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -20,10 +22,16 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) {
+        BlocProvider.of<CartshopBloc>(context)
+            .add(const CartshopEvent.loadCartItems());
+      },
+    );
     return SafeArea(
       child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(50),
+            preferredSize: const Size.fromHeight(50),
             child: AppBarMain(title: 'Good Day!👋'),
           ),
           body: SingleChildScrollView(
