@@ -11,4 +11,6 @@ abstract class CartService {
   Future<void> openBox();
   Future<void> closeBox();
   Future<void> clearCart();
+  Future<void> updateCartCountSharedPrefs(int count);
+  Future<int> getCartCountSharefPrefs();
 }

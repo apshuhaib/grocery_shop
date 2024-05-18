@@ -1,6 +1,5 @@
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/presentation/cart/cart.dart';
-import 'package:e_commerce_test/presentation/customer/customer.dart';
 import 'package:flutter/material.dart';
 
 class ProductCheckout extends StatelessWidget {
@@ -34,7 +33,7 @@ class ProductCheckout extends StatelessWidget {
               ),
               Text(
                 '\$$subtotal', // Replace with actual total
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.bold, color: kgreen, fontSize: 25),
               ),
             ],
@@ -50,7 +49,7 @@ class ProductCheckout extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return MyCart();
+                  return const MyCart();
                 }));
               },
               child: const Text(

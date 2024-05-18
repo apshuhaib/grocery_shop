@@ -2,10 +2,13 @@ import 'package:e_commerce_test/domain/cart/cart_service.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 @LazySingleton(as: CartService)
 class CartServiceimpl implements CartService {
   static const String _boxName = 'grocerCartBox';
+  static const String _cartCountKey = 'cartCount';
+  late SharedPreferences _prefs;
   Box<CartModel>? _cartBox;
 //open box and register adapter
   @override
@@ -13,6 +16,7 @@ class CartServiceimpl implements CartService {
     await Hive.initFlutter();
     Hive.registerAdapter(CartModelAdapter());
     _cartBox = await Hive.openBox<CartModel>(_boxName);
+    _prefs = await SharedPreferences.getInstance();
   }
 
 //close box
@@ -65,6 +69,7 @@ class CartServiceimpl implements CartService {
     }
   }
 
+//cartcount
   @override
   Future<void> cartCount(CartModel item, int quantity) async {
     final cartItem = _cartBox?.values
@@ -75,6 +80,7 @@ class CartServiceimpl implements CartService {
     }
   }
 
+//total price
   @override
   double getTotalPrice() {
     return _cartBox?.values
@@ -82,9 +88,21 @@ class CartServiceimpl implements CartService {
         0.0;
   }
 
+//clear cart
   @override
   @override
   Future<void> clearCart() async {
     await _cartBox?.clear();
+  }
+
+//sharedprefs
+  @override
+  Future<void> updateCartCountSharedPrefs(int count) async {
+    await _prefs.setInt(_cartCountKey, count);
+  }
+
+  @override
+  Future<int> getCartCountSharefPrefs() async {
+    return _prefs.getInt(_cartCountKey) ?? 0;
   }
 }

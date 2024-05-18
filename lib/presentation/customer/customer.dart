@@ -1,17 +1,16 @@
 import 'package:e_commerce_test/application/cart_shop/cartshop_bloc.dart';
 import 'package:e_commerce_test/application/customer/customer_bloc.dart';
+import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/core/constants.dart';
-import 'package:e_commerce_test/core/strings.dart';
-import 'package:e_commerce_test/presentation/cart/cart.dart';
+import 'package:e_commerce_test/domain/orders/model/order_model.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/order_accepted_widget.dart';
 import 'package:e_commerce_test/presentation/customer/widgets/customer_card.dart';
 import 'package:e_commerce_test/presentation/main_page/main_page.dart';
 import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 class CustomerPage extends StatelessWidget {
   CustomerPage({super.key});
@@ -118,20 +117,24 @@ class CustomerPage extends StatelessWidget {
                         onTap: () {
                           final cartState = context.read<CartshopBloc>().state;
                           if (cartState.cartItems.isEmpty) {
-                            // Show a message or perform any other action
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
+                              const SnackBar(
                                 content: Text(
                                     'Your cart is empty. Please add items to proceed.'),
                               ),
                             );
                           } else {
-                            // Navigate to the OrderAcceptedWidget
+                            final request = OrderRequest(
+                                customerId: 2, totalPrice: 0.0, products: []);
+                            BlocProvider.of<OrderBloc>(context)
+                                .add(OrderEvent.placeOrder(request));
                             Navigator.of(context).push(
                               MaterialPageRoute(builder: (context) {
                                 return const OrderAcceptedWidget();
                               }),
                             );
+                            BlocProvider.of<CartshopBloc>(context)
+                                .add(const CartshopEvent.clearCart());
                           }
                         },
                         customerName: customer.name ?? 'NA',

@@ -1243,6 +1243,7 @@ mixin _$CartshopState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
+  int get cartCount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CartshopStateCopyWith<CartshopState> get copyWith =>
@@ -1260,7 +1261,8 @@ abstract class $CartshopStateCopyWith<$Res> {
       double totalPrice,
       bool isLoading,
       bool isError,
-      String errorMessage});
+      String errorMessage,
+      int cartCount});
 }
 
 /// @nodoc
@@ -1281,6 +1283,7 @@ class _$CartshopStateCopyWithImpl<$Res, $Val extends CartshopState>
     Object? isLoading = null,
     Object? isError = null,
     Object? errorMessage = null,
+    Object? cartCount = null,
   }) {
     return _then(_value.copyWith(
       cartItems: null == cartItems
@@ -1303,6 +1306,10 @@ class _$CartshopStateCopyWithImpl<$Res, $Val extends CartshopState>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      cartCount: null == cartCount
+          ? _value.cartCount
+          : cartCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -1320,7 +1327,8 @@ abstract class _$$CartshopStateImplCopyWith<$Res>
       double totalPrice,
       bool isLoading,
       bool isError,
-      String errorMessage});
+      String errorMessage,
+      int cartCount});
 }
 
 /// @nodoc
@@ -1339,6 +1347,7 @@ class __$$CartshopStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isError = null,
     Object? errorMessage = null,
+    Object? cartCount = null,
   }) {
     return _then(_$CartshopStateImpl(
       cartItems: null == cartItems
@@ -1361,6 +1370,10 @@ class __$$CartshopStateImplCopyWithImpl<$Res>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      cartCount: null == cartCount
+          ? _value.cartCount
+          : cartCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1373,7 +1386,8 @@ class _$CartshopStateImpl implements _CartshopState {
       required this.totalPrice,
       required this.isLoading,
       required this.isError,
-      required this.errorMessage})
+      required this.errorMessage,
+      required this.cartCount})
       : _cartItems = cartItems;
 
   final List<CartModel> _cartItems;
@@ -1392,10 +1406,12 @@ class _$CartshopStateImpl implements _CartshopState {
   final bool isError;
   @override
   final String errorMessage;
+  @override
+  final int cartCount;
 
   @override
   String toString() {
-    return 'CartshopState(cartItems: $cartItems, totalPrice: $totalPrice, isLoading: $isLoading, isError: $isError, errorMessage: $errorMessage)';
+    return 'CartshopState(cartItems: $cartItems, totalPrice: $totalPrice, isLoading: $isLoading, isError: $isError, errorMessage: $errorMessage, cartCount: $cartCount)';
   }
 
   @override
@@ -1411,7 +1427,9 @@ class _$CartshopStateImpl implements _CartshopState {
                 other.isLoading == isLoading) &&
             (identical(other.isError, isError) || other.isError == isError) &&
             (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+                other.errorMessage == errorMessage) &&
+            (identical(other.cartCount, cartCount) ||
+                other.cartCount == cartCount));
   }
 
   @override
@@ -1421,7 +1439,8 @@ class _$CartshopStateImpl implements _CartshopState {
       totalPrice,
       isLoading,
       isError,
-      errorMessage);
+      errorMessage,
+      cartCount);
 
   @JsonKey(ignore: true)
   @override
@@ -1436,7 +1455,8 @@ abstract class _CartshopState implements CartshopState {
       required final double totalPrice,
       required final bool isLoading,
       required final bool isError,
-      required final String errorMessage}) = _$CartshopStateImpl;
+      required final String errorMessage,
+      required final int cartCount}) = _$CartshopStateImpl;
 
   @override
   List<CartModel> get cartItems;
@@ -1448,6 +1468,8 @@ abstract class _CartshopState implements CartshopState {
   bool get isError;
   @override
   String get errorMessage;
+  @override
+  int get cartCount;
   @override
   @JsonKey(ignore: true)
   _$$CartshopStateImplCopyWith<_$CartshopStateImpl> get copyWith =>

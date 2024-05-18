@@ -18,22 +18,24 @@ class CartIconWidget extends StatelessWidget {
       builder: (context, state) {
         int cartCount = state.cartItems.length;
         return Badge(
+            largeSize: 21,
             label: Text(
               cartCount.toString(),
+              style: const TextStyle(fontSize: 16),
             ),
             child: IconButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return MyCart();
+                        return const MyCart();
                       },
                     ),
                   );
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.shopping_cart,
-                  size: 32,
+                  size: 33,
                   color: kgreen,
                 )));
       },

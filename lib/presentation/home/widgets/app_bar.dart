@@ -15,21 +15,27 @@ class AppBarMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-            color: Colors.green,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Text(
+            title,
+            style: const TextStyle(
+              color: Colors.green,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         const Spacer(),
-        CartIconWidget(
-          onCartPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return MyCart();
-            }));
-          },
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5),
+          child: CartIconWidget(
+            onCartPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const MyCart();
+              }));
+            },
+          ),
         ),
         kWidth,
       ],
