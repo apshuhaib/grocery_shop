@@ -25,10 +25,9 @@ class AppBarMain extends StatelessWidget {
         ),
         const Spacer(),
         CartIconWidget(
-          cartCountNotifier: cartCountNotifier,
           onCartPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Cart();
+              return MyCart();
             }));
           },
         ),

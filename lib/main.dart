@@ -1,8 +1,9 @@
-import 'package:e_commerce_test/application/cart/cart_bloc.dart';
+import 'package:e_commerce_test/application/cart_shop/cartshop_bloc.dart';
 import 'package:e_commerce_test/application/customer/customer_bloc.dart';
 import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
+import 'package:e_commerce_test/domain/cart/cart_service.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/domain/core/di/injectable.dart';
 import 'package:e_commerce_test/infrastructure/cart/cart_service_impl.dart';
@@ -15,11 +16,12 @@ import 'package:hive_flutter/hive_flutter.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureInjection();
-  await Hive.initFlutter();
-  if (!Hive.isAdapterRegistered(CartModelAdapter().typeId)) {
-    Hive.registerAdapter(CartModelAdapter());
-  }
-  await CartServiceImpl().openBox();
+  // await Hive.initFlutter();
+  // if (!Hive.isAdapterRegistered(CartModelAdapter().typeId)) {
+  //   Hive.registerAdapter(CartModelAdapter());
+  // }
+  final cartService = getIt<CartService>();
+  await cartService.openBox();
   runApp(const MyApp());
 }
 
@@ -38,10 +40,10 @@ class MyApp extends StatelessWidget {
           create: (context) => getIt<CustomerBloc>(),
         ),
         BlocProvider(
-          create: (context) => getIt<CartBloc>(),
+          create: (context) => getIt<OrderBloc>(),
         ),
         BlocProvider(
-          create: (context) => getIt<OrderBloc>(),
+          create: (context) => getIt<CartshopBloc>(),
         ),
       ],
       child: MaterialApp(

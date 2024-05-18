@@ -2,6 +2,7 @@ import 'package:e_commerce_test/application/order/order_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/domain/cart/model/cart_model.dart';
 import 'package:e_commerce_test/domain/orders/model/order_model.dart';
+import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/order_accepted_widget.dart';
 import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -80,10 +81,10 @@ class CheckoutCardWidget extends StatelessWidget {
                     );
                     changeIndexNotifier.value = 0;
 
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return const OrderAcceptedWidget();
-                    }));
+                    // Navigator.of(context)
+                    //     .push(MaterialPageRoute(builder: (context) {
+                    //   return Cart();
+                    // }));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(

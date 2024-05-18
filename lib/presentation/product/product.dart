@@ -1,4 +1,4 @@
-import 'package:e_commerce_test/application/cart/cart_bloc.dart';
+import 'package:e_commerce_test/application/cart_shop/cartshop_bloc.dart';
 import 'package:e_commerce_test/application/product/product_bloc.dart';
 import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/core/constants.dart';
@@ -14,22 +14,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ProductsPage extends StatelessWidget {
   ProductsPage({super.key});
   ValueNotifier<double> subtotalNotifier = ValueNotifier<double>(0.0);
-  final ValueNotifier<int> cartCountNotifier = ValueNotifier<int>(0);
-  final Set<String> addedProductIds = {};
-  double calculateSubtotal(List<CartModel> cartList) {
-    double total = 0;
-    for (final item in cartList) {
-      total += item.price * item.quantity;
-    }
-    return total;
-  }
 
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<ProductBloc>(context)
           .add(const ProductEvent.initialize());
-      BlocProvider.of<CartBloc>(context).add(const CartEvent.loadCart());
     });
     return Scaffold(
       appBar: AppBar(
@@ -51,12 +41,11 @@ class ProductsPage extends StatelessWidget {
         ),
         actions: [
           CartIconWidget(
-            cartCountNotifier: cartCountNotifier,
             onCartPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return Cart();
+                    return MyCart();
                   },
                 ),
               );
@@ -110,33 +99,8 @@ class ProductsPage extends StatelessWidget {
                                       price: products.price!.toDouble(),
                                       imageUrl: products.image!,
                                     );
-                                    if (addedProductIds
-                                        .contains(product.productId)) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            '${product.productName} is already in the cart.',
-                                          ),
-                                        ),
-                                      );
-                                    } else {
-                                      BlocProvider.of<CartBloc>(context).add(
-                                          CartEvent.onAddToCart(
-                                              product, context));
-                                      addedProductIds.add(product.productId);
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            '${product.productName} added to the cart.',
-                                          ),
-                                        ),
-                                      );
-
-                                      subtotalNotifier.value += product.price!;
-                                      cartCountNotifier.value++;
-                                    }
+                                    BlocProvider.of<CartshopBloc>(context)
+                                        .add(CartshopEvent.addToCart(product));
                                   });
                             },
                             childCount: state.productResultData.length,
@@ -151,11 +115,23 @@ class ProductsPage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-            child: ValueListenableBuilder<double>(
-                valueListenable: subtotalNotifier,
-                builder: (context, value, child) {
-                  return ProductCheckout(subtotal: subtotalNotifier.value);
-                }),
+            child: BlocListener<CartshopBloc, CartshopState>(
+              listener: (context, state) {
+                // Calculate the subtotal when cart items change
+                double subtotal = state.cartItems.fold<double>(
+                  0,
+                  (previousValue, element) =>
+                      previousValue + (element.price * element.quantity),
+                );
+                // Update the subtotal
+                subtotalNotifier.value = subtotal;
+              },
+              child: ValueListenableBuilder<double>(
+                  valueListenable: subtotalNotifier,
+                  builder: (context, value, child) {
+                    return ProductCheckout(subtotal: value);
+                  }),
+            ),
           ),
         ],
       ),

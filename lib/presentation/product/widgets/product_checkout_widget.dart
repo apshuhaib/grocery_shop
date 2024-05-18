@@ -1,4 +1,5 @@
 import 'package:e_commerce_test/core/colors/colors.dart';
+import 'package:e_commerce_test/presentation/cart/cart.dart';
 import 'package:e_commerce_test/presentation/customer/customer.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,7 @@ class ProductCheckout extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return CustomerPage();
+                  return MyCart();
                 }));
               },
               child: const Text(
