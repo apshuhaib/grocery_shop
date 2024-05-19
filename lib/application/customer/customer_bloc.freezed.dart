@@ -20,18 +20,21 @@ mixin _$CustomerEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
     required TResult Function(String customerQuery) searchCustomer,
+    required TResult Function(int customerIdQuery) getCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
     TResult? Function(String customerQuery)? searchCustomer,
+    TResult? Function(int customerIdQuery)? getCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
     TResult Function(String customerQuery)? searchCustomer,
+    TResult Function(int customerIdQuery)? getCustomer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CustomerEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
     required TResult Function(SearchCustomer value) searchCustomer,
+    required TResult Function(GetCustomer value) getCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
     TResult? Function(SearchCustomer value)? searchCustomer,
+    TResult? Function(GetCustomer value)? getCustomer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
     TResult Function(SearchCustomer value)? searchCustomer,
+    TResult Function(GetCustomer value)? getCustomer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$InitializeImpl implements Initialize {
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
     required TResult Function(String customerQuery) searchCustomer,
+    required TResult Function(int customerIdQuery) getCustomer,
   }) {
     return initialize();
   }
@@ -123,6 +130,7 @@ class _$InitializeImpl implements Initialize {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
     TResult? Function(String customerQuery)? searchCustomer,
+    TResult? Function(int customerIdQuery)? getCustomer,
   }) {
     return initialize?.call();
   }
@@ -132,6 +140,7 @@ class _$InitializeImpl implements Initialize {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
     TResult Function(String customerQuery)? searchCustomer,
+    TResult Function(int customerIdQuery)? getCustomer,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -145,6 +154,7 @@ class _$InitializeImpl implements Initialize {
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
     required TResult Function(SearchCustomer value) searchCustomer,
+    required TResult Function(GetCustomer value) getCustomer,
   }) {
     return initialize(this);
   }
@@ -154,6 +164,7 @@ class _$InitializeImpl implements Initialize {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
     TResult? Function(SearchCustomer value)? searchCustomer,
+    TResult? Function(GetCustomer value)? getCustomer,
   }) {
     return initialize?.call(this);
   }
@@ -163,6 +174,7 @@ class _$InitializeImpl implements Initialize {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
     TResult Function(SearchCustomer value)? searchCustomer,
+    TResult Function(GetCustomer value)? getCustomer,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -244,6 +256,7 @@ class _$SearchCustomerImpl implements SearchCustomer {
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
     required TResult Function(String customerQuery) searchCustomer,
+    required TResult Function(int customerIdQuery) getCustomer,
   }) {
     return searchCustomer(customerQuery);
   }
@@ -253,6 +266,7 @@ class _$SearchCustomerImpl implements SearchCustomer {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
     TResult? Function(String customerQuery)? searchCustomer,
+    TResult? Function(int customerIdQuery)? getCustomer,
   }) {
     return searchCustomer?.call(customerQuery);
   }
@@ -262,6 +276,7 @@ class _$SearchCustomerImpl implements SearchCustomer {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
     TResult Function(String customerQuery)? searchCustomer,
+    TResult Function(int customerIdQuery)? getCustomer,
     required TResult orElse(),
   }) {
     if (searchCustomer != null) {
@@ -275,6 +290,7 @@ class _$SearchCustomerImpl implements SearchCustomer {
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
     required TResult Function(SearchCustomer value) searchCustomer,
+    required TResult Function(GetCustomer value) getCustomer,
   }) {
     return searchCustomer(this);
   }
@@ -284,6 +300,7 @@ class _$SearchCustomerImpl implements SearchCustomer {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
     TResult? Function(SearchCustomer value)? searchCustomer,
+    TResult? Function(GetCustomer value)? getCustomer,
   }) {
     return searchCustomer?.call(this);
   }
@@ -293,6 +310,7 @@ class _$SearchCustomerImpl implements SearchCustomer {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
     TResult Function(SearchCustomer value)? searchCustomer,
+    TResult Function(GetCustomer value)? getCustomer,
     required TResult orElse(),
   }) {
     if (searchCustomer != null) {
@@ -313,6 +331,147 @@ abstract class SearchCustomer implements CustomerEvent {
 }
 
 /// @nodoc
+abstract class _$$GetCustomerImplCopyWith<$Res> {
+  factory _$$GetCustomerImplCopyWith(
+          _$GetCustomerImpl value, $Res Function(_$GetCustomerImpl) then) =
+      __$$GetCustomerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int customerIdQuery});
+}
+
+/// @nodoc
+class __$$GetCustomerImplCopyWithImpl<$Res>
+    extends _$CustomerEventCopyWithImpl<$Res, _$GetCustomerImpl>
+    implements _$$GetCustomerImplCopyWith<$Res> {
+  __$$GetCustomerImplCopyWithImpl(
+      _$GetCustomerImpl _value, $Res Function(_$GetCustomerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? customerIdQuery = null,
+  }) {
+    return _then(_$GetCustomerImpl(
+      customerIdQuery: null == customerIdQuery
+          ? _value.customerIdQuery
+          : customerIdQuery // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCustomerImpl implements GetCustomer {
+  const _$GetCustomerImpl({required this.customerIdQuery});
+
+  @override
+  final int customerIdQuery;
+
+  @override
+  String toString() {
+    return 'CustomerEvent.getCustomer(customerIdQuery: $customerIdQuery)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCustomerImpl &&
+            (identical(other.customerIdQuery, customerIdQuery) ||
+                other.customerIdQuery == customerIdQuery));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, customerIdQuery);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCustomerImplCopyWith<_$GetCustomerImpl> get copyWith =>
+      __$$GetCustomerImplCopyWithImpl<_$GetCustomerImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(String customerQuery) searchCustomer,
+    required TResult Function(int customerIdQuery) getCustomer,
+  }) {
+    return getCustomer(customerIdQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialize,
+    TResult? Function(String customerQuery)? searchCustomer,
+    TResult? Function(int customerIdQuery)? getCustomer,
+  }) {
+    return getCustomer?.call(customerIdQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(String customerQuery)? searchCustomer,
+    TResult Function(int customerIdQuery)? getCustomer,
+    required TResult orElse(),
+  }) {
+    if (getCustomer != null) {
+      return getCustomer(customerIdQuery);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchCustomer value) searchCustomer,
+    required TResult Function(GetCustomer value) getCustomer,
+  }) {
+    return getCustomer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchCustomer value)? searchCustomer,
+    TResult? Function(GetCustomer value)? getCustomer,
+  }) {
+    return getCustomer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(SearchCustomer value)? searchCustomer,
+    TResult Function(GetCustomer value)? getCustomer,
+    required TResult orElse(),
+  }) {
+    if (getCustomer != null) {
+      return getCustomer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCustomer implements CustomerEvent {
+  const factory GetCustomer({required final int customerIdQuery}) =
+      _$GetCustomerImpl;
+
+  int get customerIdQuery;
+  @JsonKey(ignore: true)
+  _$$GetCustomerImplCopyWith<_$GetCustomerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CustomerState {
   List<CustomerResultData> get customerResultData =>
       throw _privateConstructorUsedError;
@@ -320,6 +479,7 @@ mixin _$CustomerState {
       throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
+  CustomerModel? get singleCustomerData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CustomerStateCopyWith<CustomerState> get copyWith =>
@@ -336,7 +496,8 @@ abstract class $CustomerStateCopyWith<$Res> {
       {List<CustomerResultData> customerResultData,
       List<CustomerResultData> customerSearchResultData,
       bool isLoading,
-      bool isError});
+      bool isError,
+      CustomerModel? singleCustomerData});
 }
 
 /// @nodoc
@@ -356,6 +517,7 @@ class _$CustomerStateCopyWithImpl<$Res, $Val extends CustomerState>
     Object? customerSearchResultData = null,
     Object? isLoading = null,
     Object? isError = null,
+    Object? singleCustomerData = freezed,
   }) {
     return _then(_value.copyWith(
       customerResultData: null == customerResultData
@@ -374,6 +536,10 @@ class _$CustomerStateCopyWithImpl<$Res, $Val extends CustomerState>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
+      singleCustomerData: freezed == singleCustomerData
+          ? _value.singleCustomerData
+          : singleCustomerData // ignore: cast_nullable_to_non_nullable
+              as CustomerModel?,
     ) as $Val);
   }
 }
@@ -390,7 +556,8 @@ abstract class _$$CustomerStateImplCopyWith<$Res>
       {List<CustomerResultData> customerResultData,
       List<CustomerResultData> customerSearchResultData,
       bool isLoading,
-      bool isError});
+      bool isError,
+      CustomerModel? singleCustomerData});
 }
 
 /// @nodoc
@@ -408,6 +575,7 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
     Object? customerSearchResultData = null,
     Object? isLoading = null,
     Object? isError = null,
+    Object? singleCustomerData = freezed,
   }) {
     return _then(_$CustomerStateImpl(
       customerResultData: null == customerResultData
@@ -426,6 +594,10 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
+      singleCustomerData: freezed == singleCustomerData
+          ? _value.singleCustomerData
+          : singleCustomerData // ignore: cast_nullable_to_non_nullable
+              as CustomerModel?,
     ));
   }
 }
@@ -437,7 +609,8 @@ class _$CustomerStateImpl implements _CustomerState {
       {required final List<CustomerResultData> customerResultData,
       required final List<CustomerResultData> customerSearchResultData,
       required this.isLoading,
-      required this.isError})
+      required this.isError,
+      this.singleCustomerData})
       : _customerResultData = customerResultData,
         _customerSearchResultData = customerSearchResultData;
 
@@ -463,10 +636,12 @@ class _$CustomerStateImpl implements _CustomerState {
   final bool isLoading;
   @override
   final bool isError;
+  @override
+  final CustomerModel? singleCustomerData;
 
   @override
   String toString() {
-    return 'CustomerState(customerResultData: $customerResultData, customerSearchResultData: $customerSearchResultData, isLoading: $isLoading, isError: $isError)';
+    return 'CustomerState(customerResultData: $customerResultData, customerSearchResultData: $customerSearchResultData, isLoading: $isLoading, isError: $isError, singleCustomerData: $singleCustomerData)';
   }
 
   @override
@@ -480,7 +655,9 @@ class _$CustomerStateImpl implements _CustomerState {
                 other._customerSearchResultData, _customerSearchResultData) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.isError, isError) || other.isError == isError));
+            (identical(other.isError, isError) || other.isError == isError) &&
+            (identical(other.singleCustomerData, singleCustomerData) ||
+                other.singleCustomerData == singleCustomerData));
   }
 
   @override
@@ -489,7 +666,8 @@ class _$CustomerStateImpl implements _CustomerState {
       const DeepCollectionEquality().hash(_customerResultData),
       const DeepCollectionEquality().hash(_customerSearchResultData),
       isLoading,
-      isError);
+      isError,
+      singleCustomerData);
 
   @JsonKey(ignore: true)
   @override
@@ -503,7 +681,8 @@ abstract class _CustomerState implements CustomerState {
       {required final List<CustomerResultData> customerResultData,
       required final List<CustomerResultData> customerSearchResultData,
       required final bool isLoading,
-      required final bool isError}) = _$CustomerStateImpl;
+      required final bool isError,
+      final CustomerModel? singleCustomerData}) = _$CustomerStateImpl;
 
   @override
   List<CustomerResultData> get customerResultData;
@@ -513,6 +692,8 @@ abstract class _CustomerState implements CustomerState {
   bool get isLoading;
   @override
   bool get isError;
+  @override
+  CustomerModel? get singleCustomerData;
   @override
   @JsonKey(ignore: true)
   _$$CustomerStateImplCopyWith<_$CustomerStateImpl> get copyWith =>
