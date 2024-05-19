@@ -30,10 +30,12 @@ class CustomerDetails extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
           child: Card(
+            elevation: 4,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              decoration: BoxDecoration(
+                  color: Colors.green[50],
+                  borderRadius: BorderRadius.circular(20)),
               height: 200,
               width: size.width,
               child: Padding(

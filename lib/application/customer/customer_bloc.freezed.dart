@@ -479,7 +479,6 @@ mixin _$CustomerState {
       throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
-  CustomerModel? get singleCustomerData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CustomerStateCopyWith<CustomerState> get copyWith =>
@@ -496,8 +495,7 @@ abstract class $CustomerStateCopyWith<$Res> {
       {List<CustomerResultData> customerResultData,
       List<CustomerResultData> customerSearchResultData,
       bool isLoading,
-      bool isError,
-      CustomerModel? singleCustomerData});
+      bool isError});
 }
 
 /// @nodoc
@@ -517,7 +515,6 @@ class _$CustomerStateCopyWithImpl<$Res, $Val extends CustomerState>
     Object? customerSearchResultData = null,
     Object? isLoading = null,
     Object? isError = null,
-    Object? singleCustomerData = freezed,
   }) {
     return _then(_value.copyWith(
       customerResultData: null == customerResultData
@@ -536,10 +533,6 @@ class _$CustomerStateCopyWithImpl<$Res, $Val extends CustomerState>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
-      singleCustomerData: freezed == singleCustomerData
-          ? _value.singleCustomerData
-          : singleCustomerData // ignore: cast_nullable_to_non_nullable
-              as CustomerModel?,
     ) as $Val);
   }
 }
@@ -556,8 +549,7 @@ abstract class _$$CustomerStateImplCopyWith<$Res>
       {List<CustomerResultData> customerResultData,
       List<CustomerResultData> customerSearchResultData,
       bool isLoading,
-      bool isError,
-      CustomerModel? singleCustomerData});
+      bool isError});
 }
 
 /// @nodoc
@@ -575,7 +567,6 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
     Object? customerSearchResultData = null,
     Object? isLoading = null,
     Object? isError = null,
-    Object? singleCustomerData = freezed,
   }) {
     return _then(_$CustomerStateImpl(
       customerResultData: null == customerResultData
@@ -594,10 +585,6 @@ class __$$CustomerStateImplCopyWithImpl<$Res>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
-      singleCustomerData: freezed == singleCustomerData
-          ? _value.singleCustomerData
-          : singleCustomerData // ignore: cast_nullable_to_non_nullable
-              as CustomerModel?,
     ));
   }
 }
@@ -609,8 +596,7 @@ class _$CustomerStateImpl implements _CustomerState {
       {required final List<CustomerResultData> customerResultData,
       required final List<CustomerResultData> customerSearchResultData,
       required this.isLoading,
-      required this.isError,
-      this.singleCustomerData})
+      required this.isError})
       : _customerResultData = customerResultData,
         _customerSearchResultData = customerSearchResultData;
 
@@ -636,12 +622,10 @@ class _$CustomerStateImpl implements _CustomerState {
   final bool isLoading;
   @override
   final bool isError;
-  @override
-  final CustomerModel? singleCustomerData;
 
   @override
   String toString() {
-    return 'CustomerState(customerResultData: $customerResultData, customerSearchResultData: $customerSearchResultData, isLoading: $isLoading, isError: $isError, singleCustomerData: $singleCustomerData)';
+    return 'CustomerState(customerResultData: $customerResultData, customerSearchResultData: $customerSearchResultData, isLoading: $isLoading, isError: $isError)';
   }
 
   @override
@@ -655,9 +639,7 @@ class _$CustomerStateImpl implements _CustomerState {
                 other._customerSearchResultData, _customerSearchResultData) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.isError, isError) || other.isError == isError) &&
-            (identical(other.singleCustomerData, singleCustomerData) ||
-                other.singleCustomerData == singleCustomerData));
+            (identical(other.isError, isError) || other.isError == isError));
   }
 
   @override
@@ -666,8 +648,7 @@ class _$CustomerStateImpl implements _CustomerState {
       const DeepCollectionEquality().hash(_customerResultData),
       const DeepCollectionEquality().hash(_customerSearchResultData),
       isLoading,
-      isError,
-      singleCustomerData);
+      isError);
 
   @JsonKey(ignore: true)
   @override
@@ -681,8 +662,7 @@ abstract class _CustomerState implements CustomerState {
       {required final List<CustomerResultData> customerResultData,
       required final List<CustomerResultData> customerSearchResultData,
       required final bool isLoading,
-      required final bool isError,
-      final CustomerModel? singleCustomerData}) = _$CustomerStateImpl;
+      required final bool isError}) = _$CustomerStateImpl;
 
   @override
   List<CustomerResultData> get customerResultData;
@@ -692,8 +672,6 @@ abstract class _CustomerState implements CustomerState {
   bool get isLoading;
   @override
   bool get isError;
-  @override
-  CustomerModel? get singleCustomerData;
   @override
   @JsonKey(ignore: true)
   _$$CustomerStateImplCopyWith<_$CustomerStateImpl> get copyWith =>
