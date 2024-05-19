@@ -13,14 +13,17 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
   final OrderService _orderService;
   OrderBloc(this._orderService) : super(const OrderState.initial()) {
     on<PlaceOrder>((event, emit) async {
-      final result = await _orderService.placeOrder(event.request);
-      if (result.errorCode == 0) {
-        final data = OrderResponse.fromJson(result.data);
-        emit(OrderState.orderPlaced(data));
-        print('success');
-      } else {
-        emit(OrderState.error(message: result.message));
-      }
+      emit(const OrderState.loading());
+      await Future.delayed(const Duration(seconds: 1), () async {
+        final result = await _orderService.placeOrder(event.request);
+        if (result.errorCode == 0) {
+          final data = OrderResponse.fromJson(result.data);
+          emit(OrderState.orderPlaced(data));
+          print('success');
+        } else {
+          emit(OrderState.error(message: result.message));
+        }
+      });
     });
   }
 }

@@ -113,10 +113,46 @@ class ProductsPage extends StatelessWidget {
                                       price: products.price!.toDouble(),
                                       imageUrl: products.image!,
                                     );
+                                    final cartState =
+                                        BlocProvider.of<CartshopBloc>(context)
+                                            .state;
+                                    final existingProduct =
+                                        cartState.cartItems.firstWhere(
+                                      (item) =>
+                                          item.productId == product.productId,
+                                      orElse: () => CartModel(
+                                          productId: '',
+                                          productName: '',
+                                          quantity: 0,
+                                          price: 0.0,
+                                          imageUrl: ''),
+                                    );
 
-                                    BlocProvider.of<CartshopBloc>(context)
-                                        .add(CartshopEvent.addToCart(product));
+                                    if (existingProduct.productId.isEmpty) {
+                                      BlocProvider.of<CartshopBloc>(context)
+                                          .add(
+                                              CartshopEvent.addToCart(product));
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                              'Product already in the cart'),
+                                        ),
+                                      );
+                                    }
                                   });
+                              //   final product = CartModel(
+                              //     productId: products.id.toString(),
+                              //     productName: products.name!,
+                              //     quantity: 1,
+                              //     price: products.price!.toDouble(),
+                              //     imageUrl: products.image!,
+                              //   );
+
+                              //   BlocProvider.of<CartshopBloc>(context)
+                              //       .add(CartshopEvent.addToCart(product));
+                              // });
                             },
                             childCount: state.productResultData.length,
                           ),

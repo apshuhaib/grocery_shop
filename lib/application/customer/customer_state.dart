@@ -7,7 +7,6 @@ class CustomerState with _$CustomerState {
     required List<CustomerResultData> customerSearchResultData,
     required bool isLoading,
     required bool isError,
-    CustomerModel? singleCustomerData,
   }) = _CustomerState;
 
   factory CustomerState.initial() => const CustomerState(
