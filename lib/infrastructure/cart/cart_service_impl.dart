@@ -90,9 +90,9 @@ class CartServiceimpl implements CartService {
 
 //clear cart
   @override
-  @override
   Future<void> clearCart() async {
     await _cartBox?.clear();
+    updateCartCountSharedPrefs(0);
   }
 
 //sharedprefs
