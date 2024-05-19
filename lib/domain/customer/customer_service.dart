@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce_test/domain/core/failures/main_failure.dart';
+import 'package:e_commerce_test/domain/customer/model/customer_model/customer_model/customer_model.dart';
 import 'package:e_commerce_test/domain/customer/model/customer_response.dart';
 
 abstract class CustomerService {
@@ -7,4 +8,6 @@ abstract class CustomerService {
   Future<Either<MainFailure, CustomerResponse>> searchCustomer({
     required String customerQuery,
   });
+  Future<Either<MainFailure, CustomerModel>> getSingleCustomerData(
+      {required int queryId});
 }

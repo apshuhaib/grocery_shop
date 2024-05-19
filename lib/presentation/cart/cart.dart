@@ -3,6 +3,7 @@ import 'package:e_commerce_test/core/colors/colors.dart';
 import 'package:e_commerce_test/core/strings.dart';
 import 'package:e_commerce_test/presentation/cart/widgets/cart_item_card.dart';
 import 'package:e_commerce_test/presentation/customer/customer.dart';
+import 'package:e_commerce_test/presentation/customer/widgets/customer_order_details.dart';
 import 'package:e_commerce_test/presentation/main_page/main_page.dart';
 import 'package:e_commerce_test/presentation/main_page/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -122,7 +123,7 @@ class MyCart extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return CustomerPage();
+                              return CustomerOrderPage();
                             }));
                           },
                           child: const Text(
